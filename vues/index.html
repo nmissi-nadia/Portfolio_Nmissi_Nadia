@@ -13,16 +13,20 @@
 <body>
     <header>
         <nav>
-            <span class="burger-icon">
-                <i class="fas fa-bars"></i> 
-            </span>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#experience">Expériences</a></li>
-                <li><a href="#education">Éducation</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="navbar">
+                <img src="../assets/imgs/nmnalogo.png" alt=" Logo Nadia Nmissi">
+                <span class="burger-icon">
+                    <i class="fas fa-bars"></i> 
+                </span>
+                <ul class="nav-links">
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#experience">Expériences</a></li>
+                    <li><a href="#education">Éducation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
         </nav>
         <script>
             const burgerIcon = document.querySelector('.burger-icon');
@@ -32,41 +36,64 @@
                 navLinks.classList.toggle('active');
             });
         </script>
-        <div class="profile">
-            <img src="../assets/imgs/profile-removebg.png" alt="Ma photo de profil">
-            <h1>Hi I'm Nadia Nmissi</h1>
-            <p>Développeuse Web Full-Stack</p>
-        </div>
+       
         
     </header>
 
     <main>
         <section id="introduction">
-            <img src="#" alt="photo de nadia nmissi">
-            <p>Je suis un développeuse web passionné avec une expertise en HTML, CSS, et JavaScript. J'aime créer des sites web modernes et performants.</p>
+            <div class="profile">
+                <img src="../assets/imgs/profile-removebg.png" alt="Ma photo de profil">
+                <div>
+                    <h1>Salut je suis Nadia Nmissi</h1>
+                    <p>Développeuse Web Full-Stack</p>
+                    <p>Passionné avec une expertise en HTML, CSS, et JavaScript. J'aime créer des sites web modernes et performants.</p>
+                </div>
+                
+           
+            
 
         </section>
         <section id="projet">
             <h2>Mes Projets</h2>
-            <ol>
-                <li>Projet1</li>
-            </ol>
+            <div class="prj">
+                <div class="card_pj"></div>
+                <div class="card_pj"></div>
+                <div class="card_pj"></div>
+                <div class="card_pj"></div>
+            </div>
+
         </section>
         <section id="competence">
             <h2>Mes Compétences</h2>
             <h3>Langages de Programmation</h3>
-            <ol>
+            <div class="lang">
+
+                <div class="lg">HTML5 / CSS3</div>
+                <div class="lg">JavaScript</div>
+                <div class="lg">Java</div>
+                <div class="lg">C</div>
+                <div class="lg">Kotlin</div>
+            </div>
+            
+            
+
+            <!-- <ol>
                 <li>HTML5 / CSS3</li>
                 <li>JavaScript</li>
                 <li>C / Java</li>
                 <li>Kotlin</li>
-            </ol>
+            </ol> -->
             <h3>Frameworks et Bibliothèques</h3>
-            <ol>
-                <li>Tailwind Css</li>
-                <li>Boostrap</li>
-            </ol>
+            <div class="Fr_Bi">
+                <div class="Fb"></div>
+                <div class="Fb"></div>
+            </div>
             <h3>Outils et Technologies</h3>
+            <div class="out">
+                <div class="out"></div>
+                <div class="Fb"></div>
+            </div>
             <ol>
                 <li>Git</li>
                 <li>GitHub</li>
