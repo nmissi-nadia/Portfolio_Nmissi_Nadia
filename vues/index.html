@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Une portfolio 'resume/CV' de Nmissi Nadia">
+    <meta name="keywords" content="CV,resume,portfolio,Développeur,Full-stack">
+    <title>CV_Nmissi_Nadia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="burger-icon">
+                <i class="fas fa-bars"></i> 
+            </span>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#education">Éducation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <script>
+            const burgerIcon = document.querySelector('.burger-icon');
+            const navLinks = document.querySelector('.nav-links');
+        
+            burgerIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        </script>
+        <div class="profile">
+            <img src="../assets/imgs/profile-removebg.png" alt="Ma photo de profil">
+            <h1>Hi I'm Nadia Nmissi</h1>
+            <p>Développeuse Web Full-Stack</p>
+        </div>
+        
+    </header>
+
+    <main>
+        <section id="introduction">
+            <img src="#" alt="photo de nadia nmissi">
+            <p>Je suis un développeuse web passionné avec une expertise en HTML, CSS, et JavaScript. J'aime créer des sites web modernes et performants.</p>
+
+        </section>
+        <section id="projet">
+            <h2>Mes Projets</h2>
+            <ol>
+                <li>Projet1</li>
+            </ol>
+        </section>
+        <section id="competence">
+            <h2>Mes Compétences</h2>
+            <h3>Langages de Programmation</h3>
+            <ol>
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript</li>
+                <li>C / Java</li>
+                <li>Kotlin</li>
+            </ol>
+            <h3>Frameworks et Bibliothèques</h3>
+            <ol>
+                <li>Tailwind Css</li>
+                <li>Boostrap</li>
+            </ol>
+            <h3>Outils et Technologies</h3>
+            <ol>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Visual Studio Code</li>
+            </ol>
+        </section>
+
+
+        <section id="experience">
+            <h2>Mes Expériences</h2>
+            <article>
+                <h3>Développeur Full-stack - [Entreprise]</h3>
+                <p>Juin-Juillet 2025 - Présent</p>
+                <p>Création d'applications web réactives et conviviales en utilisant HTML, CSS, et JavaScript.</p>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2>Éducation</h2>
+            <article>
+                <h3>DEUG en Mathématique et Informatique - [FPS]</h3>
+                <p>2020 - 2022</p>
+                <h3>Formation en dévelopement Web Full-Stack - [Youcode school]</h3>
+                <p>2024 - 2026</p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <div class="forvis">
+                <form action="#" method="post">
+                    <label for="mail visiteurs">Mail</label>
+                        <input type="email" name="mail_visiteur" id="ml_vstr">
+                    <label for="avis">Avis</label>
+                        <input type="text" name="mail_visiteur" id="ml_vstr">
+                    <input type="submit" value="Envoyer">
+                   
+                </form>
+            </div>
+            <div id="infocnt">
+                <h2>Contactez-moi</h2>
+            <p>Email: <a href="mailto:nmissinadia@gmail.com">nmissinadia@gmail.com</a></p>
+            <p>Téléphone: +212 6 000 000 000</p>
+            <p>Linkedin: <a href="lien">Nmissi Nadia</a></p>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Nadia Nmissi - Tous droits réservés.</p>
+        <div class="lien">
+            <h4>Liens supplémentaires</h4>
+            <ul><a href="#">Conditions d'utilisation</a></ul>
+        </div>
+    </footer>
+</body>
+</html>
