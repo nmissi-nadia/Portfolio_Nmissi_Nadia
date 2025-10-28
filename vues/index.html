@@ -3,151 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Une portfolio 'resume/CV' de Nmissi Nadia">
-    <meta name="keywords" content="CV,resume,portfolio,Développeur,Full-stack">
-    <title>CV_Nmissi_Nadia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>NMISSI NADIA | Dev Full Stack - Voyage Cosmique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="navbar">
-                <img src="../assets/imgs/nmnalogo.png" alt=" Logo Nadia Nmissi">
-                <span class="burger-icon">
-                    <i class="fas fa-bars"></i> 
-                </span>
-                <ul class="nav-links">
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#experience">Expériences</a></li>
-                    <li><a href="#education">Éducation</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
+
+<body class="antialiased overflow-x-hidden">
+
+    <div id="stars-background" class="fixed inset-0 z-0 pointer-events-none"></div>
+    <div id="nebula-effect" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+    <div id="celestial-bodies" class="fixed inset-0 z-10 pointer-events-none">
+        <div id="moon" class="celestial-body absolute top-0 right-0"></div>
+        <div id="sun" class="celestial-body absolute top-0 right-0"></div>
+    </div>
+    
+    <div id="animated-line" class="z-50">
+        <div class="line-tracer"></div>
+    </div>
+
+    <header class="relative z-20 p-4 sticky top-0 bg-interactive-block backdrop-blur-sm border-b border-accent-style transition duration-500">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <div class="text-xl font-bold text-accent-style tracking-widest transition duration-500">Nadia NMISSI. 🛰️</div>
+            <ul class="flex space-x-6 items-center">
+                <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300">Accueil</a></li>
+                <li><a href="#competences" class="relative hover:text-accent-style transition duration-300">Compétences</a></li>
+                <li><a href="#projets" class="relative hover:text-accent-style transition duration-300">Projets</a></li>
+                <li>
+                    <button id="theme-switcher" class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300">
+                        <div class="theme-icon-container">
+                            <span id="moon-icon" class="theme-icon text-2xl">🌙</span>
+                            <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
+                        </div>
+                    </button>
+                </li>
+                <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300">Contact</a></li>
+            </ul>
         </nav>
-        <script>
-            const burgerIcon = document.querySelector('.burger-icon');
-            const navLinks = document.querySelector('.nav-links');
-        
-            burgerIcon.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        </script>
-       
-        
     </header>
 
-    <main>
-        <section id="introduction">
-            <div class="profile">
-                <img src="../assets/imgs/profile-removebg.png" alt="Ma photo de profil">
-                <div>
-                    <h1>Salut je suis Nadia Nmissi</h1>
-                    <p>Développeuse Web Full-Stack</p>
-                    <p>Passionné avec une expertise en HTML, CSS, et JavaScript. J'aime créer des sites web modernes et performants.</p>
+    <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-24">
+        
+        <section id="accueil" class="min-h-screen flex items-center pt-20">
+            <div class="lg:flex lg:items-center lg:space-x-12 w-full">
+                <div class="lg:w-2/3 space-y-6">
+                    <p class="text-lg text-accent-style transition duration-500">Démarrage de la séquence d'initialisation...</p>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
+                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500">DÉVELOPPEUSE FULL STACK</span>
+                    </h1>
+                    <p class="text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500">
+                        Ingénieure Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
+                    </p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#projets" class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon">Explorer les Projets</a>
+                        <a href="https://github.com/nmissi-nadia" target="_blank" class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
+                    </div>
                 </div>
                 
-           
-            
-
-        </section>
-        <section id="projet">
-            <h2>Mes Projets</h2>
-            <div class="prj">
-                <div class="card_pj"></div>
-                <div class="card_pj"></div>
-                <div class="card_pj"></div>
-                <div class="card_pj"></div>
+                <div class="lg:w-1/3 flex justify-center items-center mt-12 lg:mt-0">
+                    <div class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden shadow-neon bg-interactive-block">
+                        <img src="../assets/imgs/nms.png" alt="Photo de profil de Nadia Nmissi" class="w-full h-full object-cover opacity-80" onerror="this.onerror=null;this.src='https://via.placeholder.com/300/1F2937/F0F0F0?text=Ajouter+Photo'">
+                    </div>
+                </div>
             </div>
-
         </section>
-        <section id="competence">
-            <h2>Mes Compétences</h2>
-            <h3>Langages de Programmation</h3>
-            <div class="lang">
 
-                <div class="lg">HTML5 / CSS3</div>
-                <div class="lg">JavaScript</div>
-                <div class="lg">Java</div>
-                <div class="lg">C</div>
-                <div class="lg">Kotlin</div>
+        <section id="competences" class="pt-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
+            
+            <div id="skills-carousel-container" class="relative overflow-hidden py-8">
+                <div id="skills-track" class="flex">
+                    </div>
             </div>
             
+            <div class="grid md:grid-cols-3 gap-8 text-center pt-8">
+                <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
+                    <h3 class="text-2xl font-bold text-accent-style mb-4">FRONTEND (Interface)</h3>
+                    <p class="text-gray-400">HTML, JavaScript, React.js, Tailwind, Bootstrap.</p>
+                </div>
+                <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
+                    <h3 class="text-2xl font-bold text-accent-style mb-4">BACKEND (Moteur)</h3>
+                    <p class="text-gray-400">PHP (Laravel), Java, C, MySQL, PostgreSQL, SQL.</p>
+                </div>
+                <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
+                    <h3 class="text-2xl font-bold text-accent-style mb-4">OUTILS & GESTION</h3>
+                    <p class="text-gray-400">Git, GitHub, Jira, Trello, Scrum, UML, Figma.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="pt-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">GALAXIES DE PROJETS 🪐</h2>
             
+            <div class="relative">
+                <div id="projects-container" class="space-y-12">
+                    </div>
 
-            <!-- <ol>
-                <li>HTML5 / CSS3</li>
-                <li>JavaScript</li>
-                <li>C / Java</li>
-                <li>Kotlin</li>
-            </ol> -->
-            <h3>Frameworks et Bibliothèques</h3>
-            <div class="Fr_Bi">
-                <div class="Fb"></div>
-                <div class="Fb"></div>
+                <button id="prev-project-btn" class="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-interactive-block text-accent-style rounded-full shadow-lg transform hover:scale-110 transition duration-300">
+                    &lt;
+                </button>
+                <button id="next-project-btn" class="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-interactive-block text-accent-style rounded-full shadow-lg transform hover:scale-110 transition duration-300">
+                    &gt;
+                </button>
             </div>
-            <h3>Outils et Technologies</h3>
-            <div class="out">
-                <div class="out"></div>
-                <div class="Fb"></div>
-            </div>
-            <ol>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>Visual Studio Code</li>
-            </ol>
         </section>
 
-
-        <section id="experience">
-            <h2>Mes Expériences</h2>
-            <article>
-                <h3>Développeur Full-stack - [Entreprise]</h3>
-                <p>Juin-Juillet 2025 - Présent</p>
-                <p>Création d'applications web réactives et conviviales en utilisant HTML, CSS, et JavaScript.</p>
-            </article>
-        </section>
-
-        <section id="education">
-            <h2>Éducation</h2>
-            <article>
-                <h3>DEUG en Mathématique et Informatique - [FPS]</h3>
-                <p>2020 - 2022</p>
-                <h3>Formation en dévelopement Web Full-Stack - [Youcode school]</h3>
-                <p>2024 - 2026</p>
-            </article>
-        </section>
-
-        <section id="contact">
-            <div class="forvis">
-                <form action="#" method="post">
-                    <label for="mail visiteurs">Mail</label>
-                        <input type="email" name="mail_visiteur" id="ml_vstr">
-                    <label for="avis">Avis</label>
-                        <input type="text" name="mail_visiteur" id="ml_vstr">
-                    <input type="submit" value="Envoyer">
-                   
+        <section id="contact" class="pt-20 pb-20 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-accent-style transition duration-500">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
+            <p class="text-xl text-gray-400 mb-10 transition duration-500">
+                Laissez-moi un message pour démarrer une nouvelle mission de développement.
+            </p>
+            
+            <div class="max-w-md mx-auto space-y-4">
+                <form action="VOTRE_ENDPOINT_DE_FORMULAIRE" method="POST" class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
+                    <input type="text" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
+                    <input type="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
+                    <textarea placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required></textarea>
+                    <button type="submit" class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]">Envoyer la Transmission</button>
                 </form>
             </div>
-            <div id="infocnt">
-                <h2>Contactez-moi</h2>
-            <p>Email: <a href="mailto:nmissinadia@gmail.com">nmissinadia@gmail.com</a></p>
-            <p>Téléphone: +212 6 000 000 000</p>
-            <p>Linkedin: <a href="lien">Nmissi Nadia</a></p>
-            </div>
-            
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2024 Nadia Nmissi - Tous droits réservés.</p>
-        <div class="lien">
-            <h4>Liens supplémentaires</h4>
-            <ul><a href="#">Conditions d'utilisation</a></ul>
-        </div>
+    <footer class="text-center p-6 border-t border-accent-style transition duration-500">
+        <p class="text-gray-500">Conçu avec 💖 et propulsé par Full Stack Code de Nadia N.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. FONCTIONS DE GESTION DU THÈME JOUR/NUIT ---
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const body = document.body;
+            const nebulaEffect = document.getElementById('nebula-effect');
+            
+            // Fonction de bascule
+            const toggleTheme = () => {
+                const isDayMode = body.classList.toggle('day-mode');
+                
+                // Gérer les effets de fond
+                if (isDayMode) {
+                    nebulaEffect.style.opacity = '0';
+                    localStorage.setItem('theme', 'day');
+                } else {
+                    nebulaEffect.style.opacity = '0.8';
+                    localStorage.setItem('theme', 'night');
+                }
+            };
+
+            // Charger le thème sauvegardé
+            const savedTheme = localStorage.getItem('theme') || 'night';
+            if (savedTheme === 'day') {
+                body.classList.add('day-mode');
+                nebulaEffect.style.opacity = '0';
+            } else {
+                nebulaEffect.style.opacity = '0.8';
+            }
+
+            themeSwitcher.addEventListener('click', toggleTheme);
+
+
+            // --- 2. GÉNÉRATION DES ÉTOILES (Reste inchangé) ---
+            const starContainer = document.getElementById('stars-background');
+            const numStars = 150; 
+            const createStar = () => {
+                const star = document.createElement('div');
+                star.className = 'star'; 
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+                starContainer.appendChild(star);
+            };
+            for (let i = 0; i < numStars; i++) {
+                createStar();
+            }
+
+
+            // --- 3. CARROUSEL DES COMPÉTENCES (Reste inchangé) ---
+            const skills = [
+                { name: "React.js", category: "Frontend", icon: "⚛️" },
+                { name: "Tailwind CSS", category: "Frontend", icon: "🎨" },
+                { name: "Laravel (PHP)", category: "Backend", icon: "🐘" },
+                { name: "PostgreSQL", category: "BDD", icon: "🗃️" },
+                { name: "Java", category: "Backend", icon: "☕" },
+                { name: "UML / Scrum", category: "Outils", icon: "📐" },
+                { name: "Git/GitHub", category: "Outils", icon: "🔗" },
+                { name: "Figma", category: "Outils", icon: "✏️" },
+            ];
+
+            const skillsTrack = document.getElementById('skills-track');
+            const allSkills = [...skills, ...skills]; 
+
+            const createSkillCard = (skill) => {
+                const card = document.createElement('div');
+                card.className = `flex-shrink-0 w-48 h-32 m-4 p-4 rounded-lg border border-accent-style bg-interactive-block text-center flex flex-col justify-center items-center transform transition duration-500 hover:scale-105 shadow-md`;
+                card.innerHTML = `
+                    <span class="text-3xl">${skill.icon}</span>
+                    <p class="text-white font-bold mt-2">${skill.name}</p>
+                    <p class="text-accent-style text-xs mt-1 transition duration-500">${skill.category}</p>
+                `;
+                return card;
+            };
+
+            allSkills.forEach(skill => {
+                skillsTrack.appendChild(createSkillCard(skill));
+            });
+
+            let scrollPosition = 0;
+            const cardWidth = 208;
+            const totalSkillsWidth = skills.length * cardWidth;
+
+            function animateScroll() {
+                scrollPosition += 0.5;
+                if (scrollPosition >= totalSkillsWidth) {
+                    scrollPosition = 0;
+                }
+                skillsTrack.style.transform = `translateX(-${scrollPosition}px)`;
+                requestAnimationFrame(animateScroll);
+            }
+            animateScroll();
+
+
+            // --- 4. PAGINATION DES PROJETS (Reste inchangé) ---
+            const projects = [
+                { id: 1, title: "TalentMatcher: Plateforme de Recrutement", desc: "Développement Full Stack (Laravel/PostgreSQL/Tailwind) d'une plateforme de matching recruteur/candidat. Interface moderne et responsive.", tech: "Laravel, PostgreSQL, Tailwind CSS, JavaScript", link: "https://github.com/nmissi-nadia" },
+                { id: 2, title: "PFE: Optimisation des Stocks & Prévision", desc: "Système d'analyse et de prévision de la demande (Python/Pandas) pour une réduction de 10% des coûts et 20% des ruptures de stock.", tech: "Python, Pandas, SQL", link: "https://github.com/nmissi-nadia" },
+                { id: 3, title: "LiqaaSpace (OCP): Réservation de Salles", desc: "Contribution Full Stack (React.js/Laravel/MySQL) à une solution de gestion et de réservation de salles de réunion. Conception UML incluse.", tech: "React.js, Laravel (API REST), MySQL, UML", link: "https://github.com/nmissi-nadia" },
+                { id: 4, title: "Système d'Information", desc: "Exemple d'un autre projet Full Stack ou de base de données que vous avez réalisé.", tech: "Technologie X, Technologie Y", link: "https://github.com/nmissi-nadia" },
+            ];
+
+            const projectsContainer = document.getElementById('projects-container');
+            const prevBtn = document.getElementById('prev-project-btn');
+            const nextBtn = document.getElementById('next-project-btn');
+            let currentPage = 0;
+            const projectsPerPage = 3;
+
+            function displayProjects(page) {
+                projectsContainer.innerHTML = '';
+                const start = page * projectsPerPage;
+                const end = start + projectsPerPage;
+                const projectsToShow = projects.slice(start, end);
+
+                projectsToShow.forEach(p => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'p-8 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block';
+                    projectCard.innerHTML = `
+                        <h3 class="text-3xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
+                        <p class="text-lg text-gray-400 mb-4">${p.desc}</p>
+                        <div class="mt-4">
+                            <span class="text-sm font-bold text-accent-style transition duration-500">TECHNOLOGIES :</span> 
+                            <span class="ml-2 text-gray-300">${p.tech}</span>
+                        </div>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="${p.link}" target="_blank" class="text-white hover:text-accent-style transition duration-300">Explorer la Galaxie (Code Source)</a>
+                        </div>
+                    `;
+                    projectsContainer.appendChild(projectCard);
+                });
+
+                prevBtn.disabled = page === 0;
+                nextBtn.disabled = end >= projects.length;
+                prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
+                nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 0) { currentPage--; displayProjects(currentPage); }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if ((currentPage + 1) * projectsPerPage < projects.length) { currentPage++; displayProjects(currentPage); }
+            });
+
+            displayProjects(currentPage);
+        });
+    </script>
 </body>
 </html>
