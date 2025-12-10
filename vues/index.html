@@ -47,6 +47,7 @@
                 <ul class="hidden lg:flex space-x-6 items-center">
                     <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300">Accueil</a></li>
                     <li><a href="#competences" class="relative hover:text-accent-style transition duration-300">Compétences</a></li>
+                    <li><a href="#experience" class="relative hover:text-accent-style transition duration-300">Expérience</a></li>
                     <li><a href="#projets" class="relative hover:text-accent-style transition duration-300">Projets</a></li>
                     <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300">Contact</a></li>
                 </ul>
@@ -57,6 +58,7 @@
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-accent-style p-4 flex flex-col space-y-4 shadow-lg z-50">
             <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300">Accueil</a>
             <a href="#competences" class="block text-center hover:text-accent-style transition duration-300">Compétences</a>
+            <a href="#experience" class="block text-center hover:text-accent-style transition duration-300">Expérience</a>
             <a href="#projets" class="block text-center hover:text-accent-style transition duration-300">Projets</a>
             <a href="#contact" class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto">Contact</a>
         </div>
@@ -65,17 +67,18 @@
     <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-24">
         
         <section id="accueil" class="min-h-screen flex items-center pt-20">
-            <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full">
+            <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full reveal">
                 <div class="lg:w-2/3 space-y-6">
-                    <p class="text-lg text-accent-style transition duration-500">Démarrage de la séquence d'initialisation...</p>
+                    <p id="typing-text" class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap">Démarrage de la séquence d'initialisation...</p>
                     <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                         NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500">DÉVELOPPEUSE FULL STACK</span>
                     </h1>
                     <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500">
-                        Ingénieure Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
+                        Développeuse Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
                     </p>
-                    <div class="flex space-x-4 pt-4">
+                    <div class="flex flex-wrap gap-4 pt-4">
                         <a href="#projets" class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon">Explorer les Projets</a>
+                        <a href="../assets/docs/cvnmissii.pdf" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Télécharger CV</a>
                         <a href="https://github.com/nmissi-nadia" target="_blank" class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
                     </div>
                 </div>
@@ -88,7 +91,7 @@
             </div>
         </section>
 
-        <section id="competences" class="pt-20">
+        <section id="competences" class="pt-20 reveal">
             <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
             
             <div id="skills-carousel-container" class="relative overflow-hidden py-8">
@@ -99,11 +102,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center pt-8">
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">FRONTEND (Interface)</h3>
-                    <p class="text-gray-400">HTML, JavaScript, React.js, Tailwind, Bootstrap.</p>
+                    <p class="text-gray-400">React.js, Angular, JavaScript, HTML, Tailwind, Bootstrap.</p>
                 </div>
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">BACKEND (Moteur)</h3>
-                    <p class="text-gray-400">PHP (Laravel), Java, C, MySQL, PostgreSQL, SQL.</p>
+                    <p class="text-gray-400">Java (Spring Boot), PHP (Laravel), C, MySQL, PostgreSQL.</p>
                 </div>
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">OUTILS & GESTION</h3>
@@ -112,7 +115,42 @@
             </div>
         </section>
 
-        <section id="projets" class="pt-20">
+        <section id="experience" class="pt-20 reveal">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">EXPÉRIENCE PROFESSIONNELLE 💼</h2>
+            
+            <div class="max-w-4xl mx-auto relative border-l-2 border-accent-style ml-4 md:ml-auto pl-8 space-y-12">
+                
+                <!-- Item 1 -->
+                <div class="relative">
+                    <!-- Dot on timeline -->
+                    <span class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 shadow-neon"></span>
+                    
+                    <div class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white">Stage en développement web</h3>
+                                <h4 class="text-lg text-accent-style font-bold">OCP Maintenance Solutions</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
+                                19/05/2025 - 18/07/2025
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-4 italic">
+                            Participation au développement de l’application <span class="text-accent-style">LiqaaSpace</span>, une solution de réservation et gestion des salles de réunion.
+                        </p>
+                        
+                        <ul class="list-disc list-inside space-y-2 text-gray-400">
+                            <li>Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.</li>
+                            <li>Développement du frontend en <span class="text-white">React.js</span> et du backend en <span class="text-white">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projets" class="pt-20 reveal">
             <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">GALAXIES DE PROJETS 🪐</h2>
             
             <div class="relative">
@@ -125,7 +163,7 @@
             </div>
         </section>
 
-        <section id="contact" class="pt-20 pb-20 text-center">
+        <section id="contact" class="pt-20 pb-20 text-center reveal">
             <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
             <p class="text-xl text-gray-400 mb-10 transition duration-500">
                 Laissez-moi un message pour démarrer une nouvelle mission de développement.
@@ -215,6 +253,8 @@
             // --- 3. CARROUSEL DES COMPÉTENCES (Reste inchangé) ---
             const skills = [
                 { name: "React.js", category: "Frontend", icon: "⚛️" },
+                { name: "Angular", category: "Frontend", icon: "🅰️" },
+                { name: "Spring Boot", category: "Backend", icon: "🍃" },
                 { name: "Tailwind CSS", category: "Frontend", icon: "🎨" },
                 { name: "Laravel (PHP)", category: "Backend", icon: "🐘" },
                 { name: "PostgreSQL", category: "BDD", icon: "🗃️" },
@@ -285,6 +325,42 @@
             // --- 5. MISE À JOUR DE L'ANNÉE DANS LE FOOTER ---
             const yearSpan = document.getElementById('current-year');
             yearSpan.textContent = new Date().getFullYear();
+
+            // --- 6. ANIMATION SCROLL REVEAL ---
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            // Déclencher une fois au chargement pour les éléments déjà visibles
+            revealOnScroll();
+
+            // --- 7. EFFET TYPING (Hero) ---
+            const typingElement = document.getElementById('typing-text');
+            if(typingElement) {
+                const text = typingElement.innerText;
+                typingElement.innerText = '';
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        typingElement.innerText += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50); // Vitesse de frappe
+                    } else {
+                        typingElement.style.borderRight = 'none'; // Enlever le curseur à la fin
+                    }
+                };
+                // Petit délai avant de commencer
+                setTimeout(typeWriter, 500);
+            }
         });
     </script>
 </body>

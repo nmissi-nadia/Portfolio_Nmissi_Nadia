@@ -35,6 +35,8 @@
         /* Bloc Interactif (Projets, Compétences) */
         .bg-interactive-block {
             background-color: var(--interactive-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             transition: background-color 0.5s, box-shadow 0.5s;
         }
 
@@ -110,5 +112,31 @@
         }
         .day-mode .shadow-neon {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre plus sobre en Jour */
+        }
+
+        /* --- SCROLLBAR PERSONNALISÉE --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-accent); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 0, 162, 0.8); 
+        }
+
+        /* --- ANIMATION D'APPARITION (SCROLL REVEAL) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
    
