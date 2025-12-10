@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les Projets | NMISSI NADIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Import des données -->
+    <script src="../assets/js/projects-data.js"></script>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <div id="stars-background" class="fixed inset-0 z-0 pointer-events-none"></div>
+    <div id="nebula-effect" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+    <header class="relative z-20 p-4 sticky top-0 bg-interactive-block backdrop-blur-sm border-b border-accent-style transition duration-500">
+        <nav class="flex justify-between items-center max-w-6xl mx-auto">
+            <a href="index.html" class="text-xl font-bold text-accent-style tracking-widest transition duration-500">Nadia NMISSI. 🛰️</a>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-switcher" class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300 mr-2">
+                    <div class="theme-icon-container">
+                        <span id="moon-icon" class="theme-icon text-2xl">🌙</span>
+                        <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
+                    </div>
+                </button>
+                <a href="index.html" class="px-4 py-2 border border-accent-style text-accent-style rounded-full font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300">Retour Accueil</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 max-w-6xl mx-auto p-8 min-h-screen">
+        
+        <section class="pt-12 pb-20">
+            <h1 class="text-3xl md:text-5xl font-bold text-center mb-4 text-white">ARCHIVES DES PROJETS 📂</h1>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Exploration complète de mes développements, applications et expérimentations.</p>
+            
+            <!-- Container Grille -->
+            <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Les projets seront injectés ici par JS -->
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="flex justify-center items-center space-x-6 mt-16">
+                <button id="prev-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                    &lt; Précédent
+                </button>
+                <span id="page-indicator" class="text-xl text-accent-style font-bold">Page 1</span>
+                <button id="next-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                    Suivant &gt;
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 border-t border-accent-style transition duration-500 bg-interactive-block">
+        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- GESTION DU THEME (Copie simplifiée) ---
+            const themeSwitcher = document.getElementById('theme-switcher');
+            const body = document.body;
+            const nebulaEffect = document.getElementById('nebula-effect');
+            
+            const toggleTheme = () => {
+                const isDayMode = body.classList.toggle('day-mode');
+                if (isDayMode) {
+                    nebulaEffect.style.opacity = '0';
+                    localStorage.setItem('theme', 'day');
+                } else {
+                    nebulaEffect.style.opacity = '0.8';
+                    localStorage.setItem('theme', 'night');
+                }
+            };
+
+            const savedTheme = localStorage.getItem('theme') || 'night';
+            if (savedTheme === 'day') {
+                body.classList.add('day-mode');
+                nebulaEffect.style.opacity = '0';
+            } else {
+                nebulaEffect.style.opacity = '0.8';
+            }
+            themeSwitcher.addEventListener('click', toggleTheme);
+
+            // --- GESTION DES ETOILES ---
+            const starContainer = document.getElementById('stars-background');
+            const numStars = 100; 
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star'; 
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                starContainer.appendChild(star);
+            }
+
+            // --- LOGIQUE DE PAGINATION ---
+            const allProjects = getProjects(); // Fonction venant de projects-data.js
+            const container = document.getElementById('all-projects-container');
+            const prevBtn = document.getElementById('prev-page-btn');
+            const nextBtn = document.getElementById('next-page-btn');
+            const pageIndicator = document.getElementById('page-indicator');
+
+            const itemsPerPage = 6;
+            let currentPage = 1;
+            const totalPages = Math.ceil(allProjects.length / itemsPerPage);
+
+            function renderPage(page) {
+                container.innerHTML = '';
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const projectsToShow = allProjects.slice(start, end);
+
+                projectsToShow.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'flex flex-col p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:-translate-y-2';
+                    
+                    card.innerHTML = `
+                        <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700 bg-gray-900 relative group">
+                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                                <span class="text-accent-style font-bold border border-accent-style px-4 py-2 rounded-full">Voir Détails</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-accent-style mb-2">${p.title}</h3>
+                        <p class="text-sm text-gray-400 mb-4 flex-grow">${p.desc}</p>
+                        <div class="mt-auto pt-4 border-t border-gray-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs bg-gray-700 text-white px-2 py-1 rounded">${p.tech}</span>
+                            </div>
+                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 bg-accent-style text-gray-900 font-bold rounded hover:bg-white transition duration-300">Accéder au Repo</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+
+                // Mise à jour des boutons
+                pageIndicator.textContent = `Page ${page} / ${totalPages}`;
+                prevBtn.disabled = page === 1;
+                nextBtn.disabled = page === totalPages;
+                
+                // Scroll to top smooth
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage(currentPage);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPage(currentPage);
+                }
+            });
+
+            // Initialisation
+            renderPage(currentPage);
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/projects-data.js"></script>
     
 </head>
 
@@ -27,33 +28,50 @@
     <header class="relative z-20 p-4 sticky top-0 bg-interactive-block backdrop-blur-sm border-b border-accent-style transition duration-500">
         <nav class="flex justify-between items-center max-w-6xl mx-auto">
             <div class="text-xl font-bold text-accent-style tracking-widest transition duration-500">Nadia NMISSI. 🛰️</div>
-            <ul class="flex space-x-6 items-center">
-                <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300">Accueil</a></li>
-                <li><a href="#competences" class="relative hover:text-accent-style transition duration-300">Compétences</a></li>
-                <li><a href="#projets" class="relative hover:text-accent-style transition duration-300">Projets</a></li>
-                <li>
-                    <button id="theme-switcher" class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300">
-                        <div class="theme-icon-container">
-                            <span id="moon-icon" class="theme-icon text-2xl">🌙</span>
-                            <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
-                        </div>
-                    </button>
-                </li>
-                <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300">Contact</a></li>
-            </ul>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Theme Switcher (Visible tout le temps) -->
+                <button id="theme-switcher" class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300 mr-2">
+                    <div class="theme-icon-container">
+                        <span id="moon-icon" class="theme-icon text-2xl">🌙</span>
+                        <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
+                    </div>
+                </button>
+
+                <!-- Bouton Menu Mobile -->
+                <button id="mobile-menu-btn" class="lg:hidden text-accent-style focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+
+                <!-- Menu Desktop -->
+                <ul class="hidden lg:flex space-x-6 items-center">
+                    <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300">Accueil</a></li>
+                    <li><a href="#competences" class="relative hover:text-accent-style transition duration-300">Compétences</a></li>
+                    <li><a href="#projets" class="relative hover:text-accent-style transition duration-300">Projets</a></li>
+                    <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300">Contact</a></li>
+                </ul>
+            </div>
         </nav>
+
+        <!-- Menu Mobile (Caché par défaut) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-accent-style p-4 flex flex-col space-y-4 shadow-lg z-50">
+            <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300">Accueil</a>
+            <a href="#competences" class="block text-center hover:text-accent-style transition duration-300">Compétences</a>
+            <a href="#projets" class="block text-center hover:text-accent-style transition duration-300">Projets</a>
+            <a href="#contact" class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto">Contact</a>
+        </div>
     </header>
 
     <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-24">
         
         <section id="accueil" class="min-h-screen flex items-center pt-20">
-            <div class="lg:flex lg:items-center lg:space-x-12 w-full">
+            <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full">
                 <div class="lg:w-2/3 space-y-6">
                     <p class="text-lg text-accent-style transition duration-500">Démarrage de la séquence d'initialisation...</p>
-                    <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
                         NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500">DÉVELOPPEUSE FULL STACK</span>
                     </h1>
-                    <p class="text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500">
+                    <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500">
                         Ingénieure Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
                     </p>
                     <div class="flex space-x-4 pt-4">
@@ -62,7 +80,7 @@
                     </div>
                 </div>
                 
-                <div class="lg:w-1/3 flex justify-center items-center mt-12 lg:mt-0">
+                <div class="lg:w-1/3 flex justify-center items-center mb-8 lg:mb-0 lg:mt-0">
                     <div class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden shadow-neon bg-interactive-block">
                         <img src="../assets/imgs/nms.png" alt="Photo de profil de Nadia Nmissi" class="w-full h-full object-cover opacity-80" onerror="this.onerror=null;this.src='https://via.placeholder.com/300/1F2937/F0F0F0?text=Ajouter+Photo'">
                     </div>
@@ -71,14 +89,14 @@
         </section>
 
         <section id="competences" class="pt-20">
-            <h2 class="text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
             
             <div id="skills-carousel-container" class="relative overflow-hidden py-8">
                 <div id="skills-track" class="flex">
                     </div>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 text-center pt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center pt-8">
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">FRONTEND (Interface)</h3>
                     <p class="text-gray-400">HTML, JavaScript, React.js, Tailwind, Bootstrap.</p>
@@ -95,32 +113,29 @@
         </section>
 
         <section id="projets" class="pt-20">
-            <h2 class="text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">GALAXIES DE PROJETS 🪐</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">GALAXIES DE PROJETS 🪐</h2>
             
             <div class="relative">
-                <div id="projects-container" class="space-y-12">
+                <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     </div>
-
-                <button id="prev-project-btn" class="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-interactive-block text-accent-style rounded-full shadow-lg transform hover:scale-110 transition duration-300">
-                    &lt;
-                </button>
-                <button id="next-project-btn" class="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-interactive-block text-accent-style rounded-full shadow-lg transform hover:scale-110 transition duration-300">
-                    &gt;
-                </button>
+                
+                <div class="text-center mt-12">
+                    <a href="projets.html" class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon">Voir tous les projets 🚀</a>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="pt-20 pb-20 text-center">
-            <h2 class="text-4xl font-bold mb-6 text-accent-style transition duration-500">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
             <p class="text-xl text-gray-400 mb-10 transition duration-500">
                 Laissez-moi un message pour démarrer une nouvelle mission de développement.
             </p>
             
             <div class="max-w-md mx-auto space-y-4">
-                <form action="VOTRE_ENDPOINT_DE_FORMULAIRE" method="POST" class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
-                    <input type="text" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
-                    <input type="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
-                    <textarea placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required></textarea>
+                <form action="https://formspree.io/f/xrbnavqb" method="POST" class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
+                    <input type="text" name="name" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
+                    <input type="email" name="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
+                    <textarea name="message" placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required></textarea>
                     <button type="submit" class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]">Envoyer la Transmission</button>
                 </form>
             </div>
@@ -129,11 +144,21 @@
     </main>
 
     <footer class="text-center p-6 border-t border-accent-style transition duration-500">
-        <p class="text-gray-500">Conçu avec 💖 et propulsé par Full Stack Code de Nadia N.</p>
+        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi. Conçu avec 💖 et propulsé par du code Full Stack.</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 0. MENU MOBILE ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if(mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
             // --- 1. FONCTIONS DE GESTION DU THÈME JOUR/NUIT ---
             const themeSwitcher = document.getElementById('theme-switcher');
@@ -233,57 +258,33 @@
 
 
             // --- 4. PAGINATION DES PROJETS (Reste inchangé) ---
-            const projects = [
-                { id: 1, title: "TalentMatcher: Plateforme de Recrutement", desc: "Développement Full Stack (Laravel/PostgreSQL/Tailwind) d'une plateforme de matching recruteur/candidat. Interface moderne et responsive.", tech: "Laravel, PostgreSQL, Tailwind CSS, JavaScript", link: "https://github.com/nmissi-nadia" },
-                { id: 2, title: "PFE: Optimisation des Stocks & Prévision", desc: "Système d'analyse et de prévision de la demande (Python/Pandas) pour une réduction de 10% des coûts et 20% des ruptures de stock.", tech: "Python, Pandas, SQL", link: "https://github.com/nmissi-nadia" },
-                { id: 3, title: "LiqaaSpace (OCP): Réservation de Salles", desc: "Contribution Full Stack (React.js/Laravel/MySQL) à une solution de gestion et de réservation de salles de réunion. Conception UML incluse.", tech: "React.js, Laravel (API REST), MySQL, UML", link: "https://github.com/nmissi-nadia" },
-                { id: 4, title: "Système d'Information", desc: "Exemple d'un autre projet Full Stack ou de base de données que vous avez réalisé.", tech: "Technologie X, Technologie Y", link: "https://github.com/nmissi-nadia" },
-            ];
-
+            // Récupération des données depuis projects-data.js
+            const allProjects = getProjects();
             const projectsContainer = document.getElementById('projects-container');
-            const prevBtn = document.getElementById('prev-project-btn');
-            const nextBtn = document.getElementById('next-project-btn');
-            let currentPage = 0;
-            const projectsPerPage = 3;
 
-            function displayProjects(page) {
-                projectsContainer.innerHTML = '';
-                const start = page * projectsPerPage;
-                const end = start + projectsPerPage;
-                const projectsToShow = projects.slice(start, end);
-
-                projectsToShow.forEach(p => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'p-8 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block';
-                    projectCard.innerHTML = `
-                        <h3 class="text-3xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
-                        <p class="text-lg text-gray-400 mb-4">${p.desc}</p>
-                        <div class="mt-4">
-                            <span class="text-sm font-bold text-accent-style transition duration-500">TECHNOLOGIES :</span> 
-                            <span class="ml-2 text-gray-300">${p.tech}</span>
-                        </div>
-                        <div class="mt-4 flex space-x-4">
-                            <a href="${p.link}" target="_blank" class="text-white hover:text-accent-style transition duration-300">Explorer la Galaxie (Code Source)</a>
-                        </div>
-                    `;
-                    projectsContainer.appendChild(projectCard);
-                });
-
-                prevBtn.disabled = page === 0;
-                nextBtn.disabled = end >= projects.length;
-                prevBtn.style.opacity = prevBtn.disabled ? '0.3' : '1';
-                nextBtn.style.opacity = nextBtn.disabled ? '0.3' : '1';
-            }
-
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 0) { currentPage--; displayProjects(currentPage); }
+            // Afficher seulement les 3 premiers
+            const recentProjects = allProjects.slice(0, 3);
+            
+            recentProjects.forEach(p => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'p-6 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block flex flex-col';
+                projectCard.innerHTML = `
+                    <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700">
+                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-2xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
+                    <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
+                    <div class="mt-auto">
+                        <div class="mb-4"><span class="text-xs font-bold text-accent-style">TECH:</span> <span class="text-xs text-gray-300">${p.tech}</span></div>
+                        <a href="${p.link}" target="_blank" class="block w-full text-center py-2 border border-accent-style text-accent-style rounded hover:bg-accent-style hover:text-gray-900 transition duration-300">Voir Code Source</a>
+                    </div>
+                `;
+                projectsContainer.appendChild(projectCard);
             });
 
-            nextBtn.addEventListener('click', () => {
-                if ((currentPage + 1) * projectsPerPage < projects.length) { currentPage++; displayProjects(currentPage); }
-            });
-
-            displayProjects(currentPage);
+            // --- 5. MISE À JOUR DE L'ANNÉE DANS LE FOOTER ---
+            const yearSpan = document.getElementById('current-year');
+            yearSpan.textContent = new Date().getFullYear();
         });
     </script>
 </body>
