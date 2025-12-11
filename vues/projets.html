@@ -28,7 +28,11 @@
                         <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
                     </div>
                 </button>
-                <a href="index.html" class="px-4 py-2 border border-accent-style text-accent-style rounded-full font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300">Retour Accueil</a>
+                <!-- Language Switcher -->
+                <button id="lang-switcher" class="px-2 py-1 rounded border border-accent-style text-accent-style font-bold text-sm hover:bg-accent-style hover:text-gray-900 transition duration-300 mr-2">
+                    FR
+                </button>
+                <a href="index.html" class="px-4 py-2 border border-accent-style text-accent-style rounded-full font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300" data-lang="btn_back">Retour Accueil</a>
             </div>
         </nav>
     </header>
@@ -36,8 +40,8 @@
     <main class="relative z-10 max-w-6xl mx-auto p-8 min-h-screen">
         
         <section class="pt-12 pb-20 reveal">
-            <h1 class="text-3xl md:text-5xl font-bold text-center mb-4 text-white">ARCHIVES DES PROJETS 📂</h1>
-            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Exploration complète de mes développements, applications et expérimentations.</p>
+            <h1 class="text-3xl md:text-5xl font-bold text-center mb-4 text-white" data-lang="archive_title">ARCHIVES DES PROJETS 📂</h1>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto" data-lang="archive_desc">Exploration complète de mes développements, applications et expérimentations.</p>
             
             <!-- Container Grille -->
             <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -46,11 +50,11 @@
 
             <!-- Pagination Controls -->
             <div class="flex justify-center items-center space-x-6 mt-16">
-                <button id="prev-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                <button id="prev-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300" data-lang="btn_prev">
                     &lt; Précédent
                 </button>
                 <span id="page-indicator" class="text-xl text-accent-style font-bold">Page 1</span>
-                <button id="next-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                <button id="next-page-btn" class="px-6 py-3 bg-interactive-block border border-accent-style text-accent-style rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-style hover:text-gray-900 transition duration-300" data-lang="btn_next">
                     Suivant &gt;
                 </button>
             </div>
@@ -65,6 +69,21 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
+            // --- 0. ANIMATION SCROLL REVEAL (PRIORITAIRE) ---
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 50;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            setTimeout(revealOnScroll, 100);
+
             // --- GESTION DU THEME (Copie simplifiée) ---
             const themeSwitcher = document.getElementById('theme-switcher');
             const body = document.body;
@@ -90,6 +109,31 @@
             }
             themeSwitcher.addEventListener('click', toggleTheme);
 
+            // --- GESTION DE LA LANGUE ---
+            const langSwitcher = document.getElementById('lang-switcher');
+            let currentLang = localStorage.getItem('lang') || 'fr';
+
+            const updatePageLanguage = (lang) => {
+                if (typeof translations === 'undefined') return;
+
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    el.innerHTML = translations[lang][key] || el.innerHTML;
+                });
+                langSwitcher.textContent = lang.toUpperCase();
+                // Re-render current page to update dynamic texts
+                renderPage(currentPage);
+            };
+
+            langSwitcher.addEventListener('click', () => {
+                currentLang = currentLang === 'fr' ? 'en' : 'fr';
+                localStorage.setItem('lang', currentLang);
+                updatePageLanguage(currentLang);
+            });
+
+            // Initialisation Langue
+            // (Appelé à la fin après renderPage)
+
             // --- GESTION DES ETOILES ---
             const starContainer = document.getElementById('stars-background');
             const numStars = 100; 
@@ -106,7 +150,7 @@
             }
 
             // --- LOGIQUE DE PAGINATION ---
-            const allProjects = getProjects(); // Fonction venant de projects-data.js
+            const allProjects = (typeof getProjects === 'function') ? getProjects() : [];
             const container = document.getElementById('all-projects-container');
             const prevBtn = document.getElementById('prev-page-btn');
             const nextBtn = document.getElementById('next-page-btn');
@@ -117,6 +161,9 @@
             const totalPages = Math.ceil(allProjects.length / itemsPerPage);
 
             function renderPage(page) {
+                if (!container) return;
+                if (typeof translations === 'undefined') return;
+
                 container.innerHTML = '';
                 const start = (page - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
@@ -130,7 +177,7 @@
                         <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700 bg-gray-900 relative group">
                             <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                                <span class="text-accent-style font-bold border border-accent-style px-4 py-2 rounded-full">Voir Détails</span>
+                                <span class="text-accent-style font-bold border border-accent-style px-4 py-2 rounded-full">${translations[currentLang].card_details}</span>
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-accent-style mb-2">${p.title}</h3>
@@ -139,7 +186,7 @@
                             <div class="flex justify-between items-center mb-4">
                                 <span class="text-xs bg-gray-700 text-white px-2 py-1 rounded">${p.tech}</span>
                             </div>
-                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 bg-accent-style text-gray-900 font-bold rounded hover:bg-white transition duration-300">Accéder au Repo</a>
+                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 bg-accent-style text-gray-900 font-bold rounded hover:bg-white transition duration-300">${translations[currentLang].card_repo}</a>
                         </div>
                     `;
                     container.appendChild(card);
@@ -170,22 +217,8 @@
 
             // Initialisation
             renderPage(currentPage);
+            updatePageLanguage(currentLang); // Appliquer la langue après le premier rendu
             document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // --- ANIMATION SCROLL REVEAL ---
-            const reveals = document.querySelectorAll('.reveal');
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 50;
-                reveals.forEach((reveal) => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
-                });
-            };
-            window.addEventListener('scroll', revealOnScroll);
-            setTimeout(revealOnScroll, 100); // Petit délai pour s'assurer que le DOM est prêt
         });
     </script>
 </body>

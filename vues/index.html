@@ -13,8 +13,8 @@
 
 <body class="antialiased overflow-x-hidden">
 
-    <div id="stars-background" class="fixed inset-0 z-0 pointer-events-none"></div>
     <div id="nebula-effect" class="fixed inset-0 z-0 pointer-events-none"></div>
+    <div id="stars-background" class="fixed inset-0 z-0 pointer-events-none"></div>
 
     <div id="celestial-bodies" class="fixed inset-0 z-10 pointer-events-none">
         <div id="moon" class="celestial-body absolute top-0 right-0"></div>
@@ -38,6 +38,11 @@
                     </div>
                 </button>
 
+                <!-- Language Switcher -->
+                <button id="lang-switcher" class="px-2 py-1 rounded border border-accent-style text-accent-style font-bold text-sm hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                    FR
+                </button>
+
                 <!-- Bouton Menu Mobile -->
                 <button id="mobile-menu-btn" class="lg:hidden text-accent-style focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -45,22 +50,22 @@
 
                 <!-- Menu Desktop -->
                 <ul class="hidden lg:flex space-x-6 items-center">
-                    <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300">Accueil</a></li>
-                    <li><a href="#competences" class="relative hover:text-accent-style transition duration-300">Compétences</a></li>
-                    <li><a href="#experience" class="relative hover:text-accent-style transition duration-300">Expérience</a></li>
-                    <li><a href="#projets" class="relative hover:text-accent-style transition duration-300">Projets</a></li>
-                    <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300">Contact</a></li>
+                    <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300" data-lang="nav_home">Accueil</a></li>
+                    <li><a href="#competences" class="relative hover:text-accent-style transition duration-300" data-lang="nav_skills">Compétences</a></li>
+                    <li><a href="#experience" class="relative hover:text-accent-style transition duration-300" data-lang="nav_exp">Expérience</a></li>
+                    <li><a href="#projets" class="relative hover:text-accent-style transition duration-300" data-lang="nav_projects">Projets</a></li>
+                    <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300" data-lang="nav_contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- Menu Mobile (Caché par défaut) -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-accent-style p-4 flex flex-col space-y-4 shadow-lg z-50">
-            <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300">Accueil</a>
-            <a href="#competences" class="block text-center hover:text-accent-style transition duration-300">Compétences</a>
-            <a href="#experience" class="block text-center hover:text-accent-style transition duration-300">Expérience</a>
-            <a href="#projets" class="block text-center hover:text-accent-style transition duration-300">Projets</a>
-            <a href="#contact" class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto">Contact</a>
+            <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_home">Accueil</a>
+            <a href="#competences" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_skills">Compétences</a>
+            <a href="#experience" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_exp">Expérience</a>
+            <a href="#projets" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_projects">Projets</a>
+            <a href="#contact" class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto" data-lang="nav_contact">Contact</a>
         </div>
     </header>
 
@@ -69,16 +74,16 @@
         <section id="accueil" class="min-h-screen flex items-center pt-20">
             <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full reveal">
                 <div class="lg:w-2/3 space-y-6">
-                    <p id="typing-text" class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap">Démarrage de la séquence d'initialisation...</p>
+                    <p id="typing-text" class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap" data-lang="hero_typing">Démarrage de la séquence d'initialisation...</p>
                     <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500">DÉVELOPPEUSE FULL STACK</span>
+                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500" data-lang="hero_title_span">DÉVELOPPEUSE FULL STACK</span>
                     </h1>
-                    <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500">
+                    <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500" data-lang="hero_desc">
                         Développeuse Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#projets" class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon">Explorer les Projets</a>
-                        <a href="../assets/docs/cvnmissii.pdf" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Télécharger CV</a>
+                        <a href="#projets" class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon" data-lang="btn_explore">Explorer les Projets</a>
+                        <a href="../assets/docs/cvnmissii.pdf" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> <span data-lang="btn_cv">Télécharger CV</span></a>
                         <a href="https://github.com/nmissi-nadia" target="_blank" class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
                     </div>
                 </div>
@@ -92,7 +97,7 @@
         </section>
 
         <section id="competences" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="skills_title">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
             
             <div id="skills-carousel-container" class="relative overflow-hidden py-8">
                 <div id="skills-track" class="flex">
@@ -116,7 +121,7 @@
         </section>
 
         <section id="experience" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">EXPÉRIENCE PROFESSIONNELLE 💼</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="exp_title">EXPÉRIENCE PROFESSIONNELLE 💼</h2>
             
             <div class="max-w-4xl mx-auto relative border-l-2 border-accent-style ml-4 md:ml-auto pl-8 space-y-12">
                 
@@ -128,7 +133,7 @@
                     <div class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                             <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Stage en développement web</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="exp_role">Stage en développement web</h3>
                                 <h4 class="text-lg text-accent-style font-bold">OCP Maintenance Solutions</h4>
                             </div>
                             <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
@@ -136,13 +141,13 @@
                             </div>
                         </div>
                         
-                        <p class="text-gray-300 mb-4 italic">
+                        <p class="text-gray-300 mb-4 italic" data-lang="exp_desc">
                             Participation au développement de l’application <span class="text-accent-style">LiqaaSpace</span>, une solution de réservation et gestion des salles de réunion.
                         </p>
                         
                         <ul class="list-disc list-inside space-y-2 text-gray-400">
-                            <li>Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.</li>
-                            <li>Développement du frontend en <span class="text-white">React.js</span> et du backend en <span class="text-white">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.</li>
+                            <li data-lang="exp_item1">Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.</li>
+                            <li data-lang="exp_item2">Développement du frontend en <span class="text-white">React.js</span> et du backend en <span class="text-white">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.</li>
                         </ul>
                     </div>
                 </div>
@@ -151,30 +156,30 @@
         </section>
 
         <section id="projets" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500">GALAXIES DE PROJETS 🪐</h2>
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="projects_title">GALAXIES DE PROJETS 🪐</h2>
             
             <div class="relative">
                 <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     </div>
                 
                 <div class="text-center mt-12">
-                    <a href="projets.html" class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon">Voir tous les projets 🚀</a>
+                    <a href="projets.html" class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon" data-lang="btn_all_projects">Voir tous les projets 🚀</a>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="pt-20 pb-20 text-center reveal">
-            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
-            <p class="text-xl text-gray-400 mb-10 transition duration-500">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500" data-lang="contact_title">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
+            <p class="text-xl text-gray-400 mb-10 transition duration-500" data-lang="contact_desc">
                 Laissez-moi un message pour démarrer une nouvelle mission de développement.
             </p>
             
             <div class="max-w-md mx-auto space-y-4">
                 <form action="https://formspree.io/f/xrbnavqb" method="POST" class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
-                    <input type="text" name="name" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
-                    <input type="email" name="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required>
-                    <textarea name="message" placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required></textarea>
-                    <button type="submit" class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]">Envoyer la Transmission</button>
+                    <input type="text" name="name" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_name">
+                    <input type="email" name="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_email">
+                    <textarea name="message" placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_msg"></textarea>
+                    <button type="submit" class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]" data-lang="btn_send">Envoyer la Transmission</button>
                 </form>
             </div>
         </section>
@@ -182,7 +187,7 @@
     </main>
 
     <footer class="text-center p-6 border-t border-accent-style transition duration-500">
-        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi. Conçu avec 💖 et propulsé par du code Full Stack.</p>
+        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi. <span data-lang="footer_text">Conçu avec 💖 et propulsé par du code Full Stack.</span></p>
     </footer>
 
     <script>
@@ -197,6 +202,22 @@
                     mobileMenu.classList.toggle('hidden');
                 });
             }
+
+            // --- 0.5. ANIMATION SCROLL REVEAL (PRIORITAIRE) ---
+            // Déplacé au début pour garantir l'affichage même en cas d'erreur JS plus bas
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Déclenchement immédiat
 
             // --- 1. FONCTIONS DE GESTION DU THÈME JOUR/NUIT ---
             const themeSwitcher = document.getElementById('theme-switcher');
@@ -228,6 +249,40 @@
 
             themeSwitcher.addEventListener('click', toggleTheme);
 
+            // --- 1.5 GESTION DE LA LANGUE ---
+            const langSwitcher = document.getElementById('lang-switcher');
+            let currentLang = localStorage.getItem('lang') || 'fr';
+
+            const updatePageLanguage = (lang) => {
+                // Sécurité : si translations n'est pas chargé
+                if (typeof translations === 'undefined') return;
+
+                // Mettre à jour les textes statiques
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    el.innerHTML = translations[lang][key] || el.innerHTML;
+                });
+                // Mettre à jour les placeholders
+                document.querySelectorAll('[data-lang-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-lang-placeholder');
+                    el.placeholder = translations[lang][key] || el.placeholder;
+                });
+                
+                // Mettre à jour le bouton
+                langSwitcher.textContent = lang.toUpperCase();
+                
+                // Re-générer les projets pour mettre à jour les labels dynamiques
+                renderProjects(lang);
+            };
+
+            langSwitcher.addEventListener('click', () => {
+                currentLang = currentLang === 'fr' ? 'en' : 'fr';
+                localStorage.setItem('lang', currentLang);
+                updatePageLanguage(currentLang);
+            });
+
+            // Initialisation Langue
+            updatePageLanguage(currentLang);
 
             // --- 2. GÉNÉRATION DES ÉTOILES (Reste inchangé) ---
             const starContainer = document.getElementById('stars-background');
@@ -299,49 +354,39 @@
 
             // --- 4. PAGINATION DES PROJETS (Reste inchangé) ---
             // Récupération des données depuis projects-data.js
-            const allProjects = getProjects();
+            // Sécurité : vérifier si la fonction existe
+            const allProjects = (typeof getProjects === 'function') ? getProjects() : [];
             const projectsContainer = document.getElementById('projects-container');
 
-            // Afficher seulement les 3 premiers
-            const recentProjects = allProjects.slice(0, 3);
-            
-            recentProjects.forEach(p => {
-                const projectCard = document.createElement('div');
-                projectCard.className = 'p-6 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block flex flex-col';
-                projectCard.innerHTML = `
-                    <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700">
-                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-                    </div>
-                    <h3 class="text-2xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
-                    <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
-                    <div class="mt-auto">
-                        <div class="mb-4"><span class="text-xs font-bold text-accent-style">TECH:</span> <span class="text-xs text-gray-300">${p.tech}</span></div>
-                        <a href="${p.link}" target="_blank" class="block w-full text-center py-2 border border-accent-style text-accent-style rounded hover:bg-accent-style hover:text-gray-900 transition duration-300">Voir Code Source</a>
-                    </div>
-                `;
-                projectsContainer.appendChild(projectCard);
-            });
+            // Fonction pour afficher les projets (mise à jour pour supporter la langue)
+            function renderProjects(lang) {
+                if (!projectsContainer) return;
+                if (typeof translations === 'undefined') return;
+
+                projectsContainer.innerHTML = '';
+                const recentProjects = allProjects.slice(0, 3);
+                
+                recentProjects.forEach(p => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'p-6 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block flex flex-col';
+                    projectCard.innerHTML = `
+                        <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700">
+                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
+                        <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
+                        <div class="mt-auto">
+                            <div class="mb-4"><span class="text-xs font-bold text-accent-style">${translations[lang].tech_label}</span> <span class="text-xs text-gray-300">${p.tech}</span></div>
+                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 border border-accent-style text-accent-style rounded hover:bg-accent-style hover:text-gray-900 transition duration-300">${translations[lang].card_repo}</a>
+                        </div>
+                    `;
+                    projectsContainer.appendChild(projectCard);
+                });
+            }
 
             // --- 5. MISE À JOUR DE L'ANNÉE DANS LE FOOTER ---
             const yearSpan = document.getElementById('current-year');
             yearSpan.textContent = new Date().getFullYear();
-
-            // --- 6. ANIMATION SCROLL REVEAL ---
-            const reveals = document.querySelectorAll('.reveal');
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 100;
-                
-                reveals.forEach((reveal) => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
-                });
-            };
-            window.addEventListener('scroll', revealOnScroll);
-            // Déclencher une fois au chargement pour les éléments déjà visibles
-            revealOnScroll();
 
             // --- 7. EFFET TYPING (Hero) ---
             const typingElement = document.getElementById('typing-text');

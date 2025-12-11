@@ -186,3 +186,85 @@ function getProjects() {
                : `https://via.placeholder.com/400x200/1F2937/F0F0F0?text=${encodeURIComponent(p.name)}`
     }));
 }
+
+// --- SYSTÈME DE TRADUCTION ---
+const translations = {
+    fr: {
+        nav_home: "Accueil",
+        nav_skills: "Compétences",
+        nav_exp: "Expérience",
+        nav_projects: "Projets",
+        nav_contact: "Contact",
+        hero_typing: "Démarrage de la séquence d'initialisation...",
+        hero_title_span: "DÉVELOPPEUSE FULL STACK",
+        hero_desc: "Développeuse Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !",
+        btn_explore: "Explorer les Projets",
+        btn_cv: "Télécharger CV",
+        skills_title: "MON ANNUAIRE TECHNOLOGIQUE 🌌",
+        exp_title: "EXPÉRIENCE PROFESSIONNELLE 💼",
+        exp_role: "Stage en développement web",
+        exp_desc: "Participation au développement de l’application <span class=\"text-accent-style\">LiqaaSpace</span>, une solution de réservation et gestion des salles de réunion.",
+        exp_item1: "Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.",
+        exp_item2: "Développement du frontend en <span class=\"text-white\">React.js</span> et du backend en <span class=\"text-white\">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.",
+        projects_title: "GALAXIES DE PROJETS 🪐",
+        btn_all_projects: "Voir tous les projets 🚀",
+        contact_title: "CONTACT : ÉTABLISSONS LA CONNEXION 📡",
+        contact_desc: "Laissez-moi un message pour démarrer une nouvelle mission de développement.",
+        form_name: "Votre Nom / Nom de la Planète",
+        form_email: "Votre Email de Contact",
+        form_msg: "Votre Message / Fréquence de Transmission",
+        btn_send: "Envoyer la Transmission",
+        footer_text: "Conçu avec 💖 et propulsé par du code Full Stack.",
+        
+        // Page Projets
+        archive_title: "ARCHIVES DES PROJETS 📂",
+        archive_desc: "Exploration complète de mes développements, applications et expérimentations.",
+        btn_back: "Retour Accueil",
+        btn_prev: "< Précédent",
+        btn_next: "Suivant >",
+        card_details: "Voir Détails",
+        card_repo: "Voir Code Source",
+        tech_label: "TECH:"
+    },
+    en: {
+        nav_home: "Home",
+        nav_skills: "Skills",
+        nav_exp: "Experience",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        hero_typing: "HI",
+        hero_title_span: "FULL STACK DEVELOPER",
+        hero_desc: "Full Stack Developer, mastering the Frontend / Backend stack for robust and scalable applications. Ready to propel your projects into Web hyperspace!",
+        btn_explore: "Explore Projects",
+        btn_cv: "Download CV",
+        skills_title: "MY TECH DIRECTORY 🌌",
+        exp_title: "PROFESSIONAL EXPERIENCE 💼",
+        exp_role: "Web Development Intern",
+        exp_desc: "Participation in the development of <span class=\"text-accent-style\">LiqaaSpace</span>, a meeting room reservation and management solution.",
+        exp_item1: "Contribution to various stages of the development cycle: functional analysis, UML design, development, testing, and deployment.",
+        exp_item2: "Frontend development in <span class=\"text-white\">React.js</span> and backend in <span class=\"text-white\">Laravel</span> (Eloquent ORM, REST API) with a MySQL database.",
+        projects_title: "PROJECT GALAXIES 🪐",
+        btn_all_projects: "See all projects 🚀",
+        contact_title: "CONTACT: ESTABLISHING CONNECTION 📡",
+        contact_desc: "Leave me a message to start a new development mission.",
+        form_name: "Your Name / Planet Name",
+        form_email: "Your Contact Email",
+        form_msg: "Your Message / Transmission Frequency",
+        btn_send: "Send Transmission",
+        footer_text: "Designed with 💖 and powered by Full Stack code.",
+
+        // Page Projets
+        archive_title: "PROJECT ARCHIVES 📂",
+        archive_desc: "Complete exploration of my developments, applications, and experiments.",
+        btn_back: "Back to Home",
+        btn_prev: "< Previous",
+        btn_next: "Next >",
+        card_details: "View Details",
+        card_repo: "View Source Code",
+        tech_label: "TECH:"
+    }
+};
+
+function getTranslation(key, lang = 'fr') {
+    return translations[lang][key] || key;
+}
