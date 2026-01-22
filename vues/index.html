@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/projects-data.js"></script>
-    
+
 </head>
 
 <body class="antialiased overflow-x-hidden">
@@ -20,18 +21,21 @@
         <div id="moon" class="celestial-body absolute top-0 right-0"></div>
         <div id="sun" class="celestial-body absolute top-0 right-0"></div>
     </div>
-    
+
     <div id="animated-line" class="z-50">
         <div class="line-tracer"></div>
     </div>
 
-    <header class="relative z-20 p-4 sticky top-0 bg-interactive-block backdrop-blur-sm border-b border-accent-style transition duration-500">
+    <header
+        class="relative z-20 p-4 sticky top-0 bg-interactive-block backdrop-blur-sm border-b border-accent-style transition duration-500">
         <nav class="flex justify-between items-center max-w-6xl mx-auto">
-            <div class="text-xl font-bold text-accent-style tracking-widest transition duration-500">Nadia NMISSI. 🛰️</div>
-            
+            <div class="text-xl font-bold text-accent-style tracking-widest transition duration-500">Nadia NMISSI. 🛰️
+            </div>
+
             <div class="flex items-center space-x-4">
                 <!-- Theme Switcher (Visible tout le temps) -->
-                <button id="theme-switcher" class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300 mr-2">
+                <button id="theme-switcher"
+                    class="p-1 rounded-full text-accent-style hover:bg-gray-200/20 transition duration-300 mr-2">
                     <div class="theme-icon-container">
                         <span id="moon-icon" class="theme-icon text-2xl">🌙</span>
                         <span id="sun-icon" class="theme-icon text-2xl">☀️</span>
@@ -39,71 +43,109 @@
                 </button>
 
                 <!-- Language Switcher -->
-                <button id="lang-switcher" class="px-2 py-1 rounded border border-accent-style text-accent-style font-bold text-sm hover:bg-accent-style hover:text-gray-900 transition duration-300">
+                <button id="lang-switcher"
+                    class="px-2 py-1 rounded border border-accent-style text-accent-style font-bold text-sm hover:bg-accent-style hover:text-gray-900 transition duration-300">
                     FR
                 </button>
 
                 <!-- Bouton Menu Mobile -->
                 <button id="mobile-menu-btn" class="lg:hidden text-accent-style focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
 
                 <!-- Menu Desktop -->
                 <ul class="hidden lg:flex space-x-6 items-center">
-                    <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300" data-lang="nav_home">Accueil</a></li>
-                    <li><a href="#competences" class="relative hover:text-accent-style transition duration-300" data-lang="nav_skills">Compétences</a></li>
-                    <li><a href="#experience" class="relative hover:text-accent-style transition duration-300" data-lang="nav_exp">Expérience</a></li>
-                    <li><a href="#projets" class="relative hover:text-accent-style transition duration-300" data-lang="nav_projects">Projets</a></li>
-                    <li><a href="#contact" class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300" data-lang="nav_contact">Contact</a></li>
+                    <li><a href="#accueil" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_home">Accueil</a></li>
+                    <li><a href="#competences" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_skills">Compétences</a></li>
+                    <li><a href="#experience" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_exp">Expérience</a></li>
+                    <li><a href="#certifications" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_cert">Certifications</a></li>
+                    <li><a href="#projets" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_projects">Projets</a></li>
+                    <li><a href="#contact"
+                            class="px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300"
+                            data-lang="nav_contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
 
         <!-- Menu Mobile (Caché par défaut) -->
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-accent-style p-4 flex flex-col space-y-4 shadow-lg z-50">
-            <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_home">Accueil</a>
-            <a href="#competences" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_skills">Compétences</a>
-            <a href="#experience" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_exp">Expérience</a>
-            <a href="#projets" class="block text-center hover:text-accent-style transition duration-300" data-lang="nav_projects">Projets</a>
-            <a href="#contact" class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto" data-lang="nav_contact">Contact</a>
+        <div id="mobile-menu"
+            class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-accent-style p-4 flex flex-col space-y-4 shadow-lg z-50">
+            <a href="#accueil" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_home">Accueil</a>
+            <a href="#competences" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_skills">Compétences</a>
+            <a href="#experience" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_exp">Expérience</a>
+            <a href="#certifications" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_cert">Certifications</a>
+            <a href="#projets" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_projects">Projets</a>
+            <a href="#contact"
+                class="block text-center px-4 py-2 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 mx-auto"
+                data-lang="nav_contact">Contact</a>
         </div>
     </header>
 
     <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-24">
-        
+
         <section id="accueil" class="min-h-screen flex items-center pt-20">
             <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full reveal">
                 <div class="lg:w-2/3 space-y-6">
-                    <p id="typing-text" class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap" data-lang="hero_typing">Démarrage de la séquence d'initialisation...</p>
+                    <p id="typing-text"
+                        class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap"
+                        data-lang="hero_typing">Démarrage de la séquence d'initialisation...</p>
                     <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500" data-lang="hero_title_span">DÉVELOPPEUSE FULL STACK</span>
+                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500"
+                            data-lang="hero_title_span">DÉVELOPPEUSE FULL STACK</span>
                     </h1>
-                    <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500" data-lang="hero_desc">
-                        Développeuse Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
+                    <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500"
+                        data-lang="hero_desc">
+                        Développeuse Full Stack, maîtrisant la pile Frontend / Backend pour des applications robustes et
+                        évolutives. Prête à propulser vos projets dans l'hyperspace du Web !
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#projets" class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon" data-lang="btn_explore">Explorer les Projets</a>
-                        <a href="../assets/docs/cvnmissii.pdf" target="_blank" class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> <span data-lang="btn_cv">Télécharger CV</span></a>
-                        <a href="https://github.com/nmissi-nadia" target="_blank" class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
+                        <a href="#projets"
+                            class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon"
+                            data-lang="btn_explore">Explorer les Projets</a>
+                        <a href="../assets/docs/cvnmissii.pdf" target="_blank"
+                            class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg
+                                class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg> <span data-lang="btn_cv">Télécharger CV</span></a>
+                        <a href="https://github.com/nmissi-nadia" target="_blank"
+                            class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
                     </div>
                 </div>
-                
+
                 <div class="lg:w-1/3 flex justify-center items-center mb-8 lg:mb-0 lg:mt-0">
-                    <div class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden shadow-neon bg-interactive-block">
-                        <img src="../assets/imgs/nms.png" alt="Photo de profil de Nadia Nmissi" class="w-full h-full object-cover opacity-80" onerror="this.onerror=null;this.src='https://via.placeholder.com/300/1F2937/F0F0F0?text=Ajouter+Photo'">
+                    <div
+                        class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden shadow-neon bg-interactive-block">
+                        <img src="../assets/imgs/nms.png" alt="Photo de profil de Nadia Nmissi"
+                            class="w-full h-full object-cover opacity-80"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/300/1F2937/F0F0F0?text=Ajouter+Photo'">
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="competences" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="skills_title">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
-            
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
+                data-lang="skills_title">MON ANNUAIRE TECHNOLOGIQUE 🌌</h2>
+
             <div id="skills-carousel-container" class="relative overflow-hidden py-8">
                 <div id="skills-track" class="flex">
-                    </div>
+                </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center pt-8">
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">FRONTEND (Interface)</h3>
@@ -111,7 +153,8 @@
                 </div>
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">BACKEND (Moteur)</h3>
-                    <p class="text-gray-400">Java (Spring Boot), PHP (Laravel), C, MySQL, PostgreSQL.</p>
+                    <p class="text-gray-400">Java (Spring Boot), PHP (Laravel), C, C++, Python, Matlab, MySQL,
+                        PostgreSQL.</p>
                 </div>
                 <div class="p-6 border border-accent-style rounded-xl bg-interactive-block">
                     <h3 class="text-2xl font-bold text-accent-style mb-4">OUTILS & GESTION</h3>
@@ -121,33 +164,44 @@
         </section>
 
         <section id="experience" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="exp_title">EXPÉRIENCE PROFESSIONNELLE 💼</h2>
-            
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
+                data-lang="exp_title">EXPÉRIENCE PROFESSIONNELLE 💼</h2>
+
             <div class="max-w-4xl mx-auto relative border-l-2 border-accent-style ml-4 md:ml-auto pl-8 space-y-12">
-                
+
                 <!-- Item 1 -->
                 <div class="relative">
                     <!-- Dot on timeline -->
-                    <span class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 shadow-neon"></span>
-                    
-                    <div class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300">
+                    <span
+                        class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 shadow-neon"></span>
+
+                    <div
+                        class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300">
                         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                             <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="exp_role">Stage en développement web</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="exp_role">Stage en
+                                    développement web</h3>
                                 <h4 class="text-lg text-accent-style font-bold">OCP Maintenance Solutions</h4>
                             </div>
-                            <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
+                            <div
+                                class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
                                 19/05/2025 - 18/07/2025
                             </div>
                         </div>
-                        
+
                         <p class="text-gray-300 mb-4 italic" data-lang="exp_desc">
-                            Participation au développement de l’application <span class="text-accent-style">LiqaaSpace</span>, une solution de réservation et gestion des salles de réunion.
+                            Participation au développement de l’application <span
+                                class="text-accent-style">LiqaaSpace</span>, une solution de réservation et gestion des
+                            salles de réunion.
                         </p>
-                        
+
                         <ul class="list-disc list-inside space-y-2 text-gray-400">
-                            <li data-lang="exp_item1">Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.</li>
-                            <li data-lang="exp_item2">Développement du frontend en <span class="text-white">React.js</span> et du backend en <span class="text-white">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.</li>
+                            <li data-lang="exp_item1">Contribution aux différentes étapes du cycle de développement :
+                                analyse fonctionnelle, conception UML, développement, tests et déploiement.</li>
+                            <li data-lang="exp_item2">Développement du frontend en <span
+                                    class="text-white">React.js</span> et du backend en <span
+                                    class="text-white">Laravel</span> (Eloquent ORM, API REST) avec une base de données
+                                MySQL.</li>
                         </ul>
                     </div>
                 </div>
@@ -155,31 +209,113 @@
             </div>
         </section>
 
+        <section id="certifications" class="pt-20 reveal">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
+                data-lang="cert_title">CERTIFICATIONS 🏆</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Certification 1: Problem Solving -->
+                <div
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-5xl">🏆</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white text-center mb-3" data-lang="cert_problem_solving">
+                        Certificat de résolution de problèmes (de base)</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_issued_by">Délivré par</span>
+                            <span>HackerRank</span>
+                        </p>
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_date">Date</span>
+                            <span>Décembre 2024</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certification 2: Python -->
+                <div
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-5xl">🐍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white text-center mb-3" data-lang="cert_python">Certificat Python
+                        (de base)</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_issued_by">Délivré par</span>
+                            <span>HackerRank</span>
+                        </p>
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_date">Date</span>
+                            <span>Décembre 2024</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certification 3: Java -->
+                <div
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-5xl">☕</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white text-center mb-3" data-lang="cert_java">Certificat Java (de
+                        base)</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_issued_by">Délivré par</span>
+                            <span>HackerRank</span>
+                        </p>
+                        <p class="flex items-center justify-between">
+                            <span class="font-semibold text-accent-style" data-lang="cert_date">Date</span>
+                            <span>Octobre 2025</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <section id="projets" class="pt-20 reveal">
-            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500" data-lang="projects_title">GALAXIES DE PROJETS 🪐</h2>
-            
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
+                data-lang="projects_title">GALAXIES DE PROJETS 🪐</h2>
+
             <div class="relative">
                 <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    </div>
-                
+                </div>
+
                 <div class="text-center mt-12">
-                    <a href="projets.html" class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon" data-lang="btn_all_projects">Voir tous les projets 🚀</a>
+                    <a href="projets.html"
+                        class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon"
+                        data-lang="btn_all_projects">Voir tous les projets 🚀</a>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="pt-20 pb-20 text-center reveal">
-            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500" data-lang="contact_title">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500"
+                data-lang="contact_title">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
             <p class="text-xl text-gray-400 mb-10 transition duration-500" data-lang="contact_desc">
                 Laissez-moi un message pour démarrer une nouvelle mission de développement.
             </p>
-            
+
             <div class="max-w-md mx-auto space-y-4">
-                <form action="https://formspree.io/f/xrbnavqb" method="POST" class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
-                    <input type="text" name="name" placeholder="Votre Nom / Nom de la Planète" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_name">
-                    <input type="email" name="email" placeholder="Votre Email de Contact" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_email">
-                    <textarea name="message" placeholder="Votre Message / Fréquence de Transmission" rows="4" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500" required data-lang-placeholder="form_msg"></textarea>
-                    <button type="submit" class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]" data-lang="btn_send">Envoyer la Transmission</button>
+                <form action="https://formspree.io/f/xrbnavqb" method="POST"
+                    class="mt-8 p-6 rounded-xl border border-accent-style transition duration-500 bg-interactive-block">
+                    <input type="text" name="name" placeholder="Votre Nom / Nom de la Planète"
+                        class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500"
+                        required data-lang-placeholder="form_name">
+                    <input type="email" name="email" placeholder="Votre Email de Contact"
+                        class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500"
+                        required data-lang-placeholder="form_email">
+                    <textarea name="message" placeholder="Votre Message / Fréquence de Transmission" rows="4"
+                        class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500"
+                        required data-lang-placeholder="form_msg"></textarea>
+                    <button type="submit"
+                        class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]"
+                        data-lang="btn_send">Envoyer la Transmission</button>
                 </form>
             </div>
         </section>
@@ -187,7 +323,8 @@
     </main>
 
     <footer class="text-center p-6 border-t border-accent-style transition duration-500">
-        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi. <span data-lang="footer_text">Conçu avec 💖 et propulsé par du code Full Stack.</span></p>
+        <p class="text-gray-500">&copy; <span id="current-year"></span> Nadia Nmissi. <span
+                data-lang="footer_text">Conçu avec 💖 et propulsé par du code Full Stack.</span></p>
     </footer>
 
     <script>
@@ -196,8 +333,8 @@
             // --- 0. MENU MOBILE ---
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            
-            if(mobileMenuBtn) {
+
+            if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
                 });
@@ -223,11 +360,11 @@
             const themeSwitcher = document.getElementById('theme-switcher');
             const body = document.body;
             const nebulaEffect = document.getElementById('nebula-effect');
-            
+
             // Fonction de bascule
             const toggleTheme = () => {
                 const isDayMode = body.classList.toggle('day-mode');
-                
+
                 // Gérer les effets de fond
                 if (isDayMode) {
                     nebulaEffect.style.opacity = '0';
@@ -267,10 +404,10 @@
                     const key = el.getAttribute('data-lang-placeholder');
                     el.placeholder = translations[lang][key] || el.placeholder;
                 });
-                
+
                 // Mettre à jour le bouton
                 langSwitcher.textContent = lang.toUpperCase();
-                
+
                 // Re-générer les projets pour mettre à jour les labels dynamiques
                 renderProjects(lang);
             };
@@ -286,10 +423,10 @@
 
             // --- 2. GÉNÉRATION DES ÉTOILES (Reste inchangé) ---
             const starContainer = document.getElementById('stars-background');
-            const numStars = 150; 
+            const numStars = 150;
             const createStar = () => {
                 const star = document.createElement('div');
-                star.className = 'star'; 
+                star.className = 'star';
                 star.style.left = `${Math.random() * 100}%`;
                 star.style.top = `${Math.random() * 100}%`;
                 const size = Math.random() * 3 + 1;
@@ -314,13 +451,16 @@
                 { name: "Laravel (PHP)", category: "Backend", icon: "🐘" },
                 { name: "PostgreSQL", category: "BDD", icon: "🗃️" },
                 { name: "Java", category: "Backend", icon: "☕" },
+                { name: "C++", category: "Backend", icon: "⚙️" },
+                { name: "Python", category: "Backend", icon: "🐍" },
+                { name: "Matlab", category: "Backend", icon: "📊" },
                 { name: "UML / Scrum", category: "Outils", icon: "📐" },
                 { name: "Git/GitHub", category: "Outils", icon: "🔗" },
                 { name: "Figma", category: "Outils", icon: "✏️" },
             ];
 
             const skillsTrack = document.getElementById('skills-track');
-            const allSkills = [...skills, ...skills]; 
+            const allSkills = [...skills, ...skills];
 
             const createSkillCard = (skill) => {
                 const card = document.createElement('div');
@@ -365,7 +505,7 @@
 
                 projectsContainer.innerHTML = '';
                 const recentProjects = allProjects.slice(0, 3);
-                
+
                 recentProjects.forEach(p => {
                     const projectCard = document.createElement('div');
                     projectCard.className = 'p-6 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block flex flex-col';
@@ -390,7 +530,7 @@
 
             // --- 7. EFFET TYPING (Hero) ---
             const typingElement = document.getElementById('typing-text');
-            if(typingElement) {
+            if (typingElement) {
                 const text = typingElement.innerText;
                 typingElement.innerText = '';
                 let i = 0;
@@ -409,4 +549,5 @@
         });
     </script>
 </body>
+
 </html>
