@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -64,6 +64,8 @@
                             data-lang="nav_skills">Compétences</a></li>
                     <li><a href="#experience" class="relative hover:text-accent-style transition duration-300"
                             data-lang="nav_exp">Expérience</a></li>
+                    <li><a href="#formations" class="relative hover:text-accent-style transition duration-300"
+                            data-lang="nav_edu">Formations</a></li>
                     <li><a href="#certifications" class="relative hover:text-accent-style transition duration-300"
                             data-lang="nav_cert">Certifications</a></li>
                     <li><a href="#projets" class="relative hover:text-accent-style transition duration-300"
@@ -84,6 +86,8 @@
                 data-lang="nav_skills">Compétences</a>
             <a href="#experience" class="block text-center hover:text-accent-style transition duration-300"
                 data-lang="nav_exp">Expérience</a>
+            <a href="#formations" class="block text-center hover:text-accent-style transition duration-300"
+                data-lang="nav_edu">Formations</a>
             <a href="#certifications" class="block text-center hover:text-accent-style transition duration-300"
                 data-lang="nav_cert">Certifications</a>
             <a href="#projets" class="block text-center hover:text-accent-style transition duration-300"
@@ -94,16 +98,16 @@
         </div>
     </header>
 
-    <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-24">
+    <main class="relative z-10 max-w-6xl mx-auto p-8 space-y-16">
 
-        <section id="accueil" class="min-h-screen flex items-center pt-20">
+        <section id="accueil" class="flex items-center pt-10 pb-16">
             <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:space-x-12 w-full reveal">
                 <div class="lg:w-2/3 space-y-6">
                     <p id="typing-text"
                         class="text-lg text-accent-style transition duration-500 border-r-2 border-accent-style pr-1 w-fit overflow-hidden whitespace-nowrap"
                         data-lang="hero_typing">Démarrage de la séquence d'initialisation...</p>
                     <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                        NMISSI NADIA, <span class="text-accent-style block mt-2 transition duration-500"
+                        <span class="shimmer-text">NMISSI NADIA</span>, <span class="text-accent-style block mt-2 transition duration-500"
                             data-lang="hero_title_span">DÉVELOPPEUSE FULL STACK</span>
                     </h1>
                     <p class="text-base md:text-lg lg:text-xl max-w-2xl text-gray-400 transition duration-500"
@@ -113,7 +117,7 @@
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
                         <a href="#projets"
-                            class="px-6 py-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon"
+                            class="btn-girly"
                             data-lang="btn_explore">Explorer les Projets</a>
                         <a href="../assets/docs/cvnmissii.pdf" target="_blank"
                             class="px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"><svg
@@ -122,16 +126,16 @@
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                             </svg> <span data-lang="btn_cv">Télécharger CV</span></a>
                         <a href="https://github.com/nmissi-nadia" target="_blank"
-                            class="px-6 py-3 border border-accent-style text-accent-style rounded-lg font-bold hover:bg-accent-style hover:text-gray-900 transition duration-300 transform hover:scale-105">GitHub</a>
+                            class="btn-girly" style="background-color: transparent; color: var(--color-accent) !important;">GitHub</a>
                     </div>
                 </div>
 
                 <div class="lg:w-1/3 flex justify-center items-center mb-8 lg:mb-0 lg:mt-0">
                     <div
-                        class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden shadow-neon bg-interactive-block">
-                        <img src="../assets/imgs/nms.png" alt="Photo de profil de Nadia Nmissi"
-                            class="w-full h-full object-cover opacity-80"
-                            onerror="this.onerror=null;this.src='https://via.placeholder.com/300/1F2937/F0F0F0?text=Ajouter+Photo'">
+                        class="w-64 h-64 rounded-full border-4 border-accent-style flex items-center justify-center overflow-hidden bg-interactive-block bounce-img">
+                        <svg class="w-32 h-32 text-accent-style" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -209,6 +213,61 @@
             </div>
         </section>
 
+        <section id="formations" class="pt-16 reveal">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
+                data-lang="edu_title">ÉTUDES ET FORMATIONS 🎓</h2>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-accent-style ml-4 md:ml-auto pl-8 space-y-8">
+                <!-- Youcode -->
+                <div class="relative group">
+                    <span class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 group-hover:scale-125 group-hover:animate-spin transition duration-300"></span>
+                    <div class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform group-hover:-translate-y-2 group-hover:shadow-lg">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="edu_1_title">Développement Full Stack Web</h3>
+                                <h4 class="text-lg text-accent-style font-bold">Youcode (UM6P) Safi</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
+                                2024 - Présent
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Licence -->
+                <div class="relative group">
+                    <span class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 group-hover:scale-125 group-hover:animate-spin transition duration-300"></span>
+                    <div class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform group-hover:-translate-y-2 group-hover:shadow-lg">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="edu_2_title">Licence Sciences Mathématiques et Informatiques</h3>
+                                <h4 class="text-lg text-accent-style font-bold">Faculté Polydisciplinaire Safi</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
+                                2020 - 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bac -->
+                <div class="relative group">
+                    <span class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent-style border-4 border-gray-900 group-hover:scale-125 group-hover:animate-spin transition duration-300"></span>
+                    <div class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform group-hover:-translate-y-2 group-hover:shadow-lg">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white" data-lang="edu_3_title">Baccalauréat Sciences Mathématiques B BIOF</h3>
+                                <h4 class="text-lg text-accent-style font-bold">Lycée technique Al Khawarizmi Safi</h4>
+                            </div>
+                            <div class="mt-2 md:mt-0 px-3 py-1 rounded-full border border-gray-600 text-sm text-gray-400 bg-gray-900">
+                                2020
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="certifications" class="pt-20 reveal">
             <h2 class="text-2xl md:text-4xl font-bold text-center mb-12 text-accent-style border-b-2 border-accent-style pb-2 inline-block mx-auto block w-fit transition duration-500"
                 data-lang="cert_title">CERTIFICATIONS 🏆</h2>
@@ -217,7 +276,7 @@
 
                 <!-- Certification 1: Problem Solving -->
                 <div
-                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform float-element" style="animation-delay: 0s;">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl">🏆</span>
                     </div>
@@ -237,7 +296,7 @@
 
                 <!-- Certification 2: Python -->
                 <div
-                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform float-element" style="animation-delay: 1s;">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl">🐍</span>
                     </div>
@@ -257,7 +316,7 @@
 
                 <!-- Certification 3: Java -->
                 <div
-                    class="p-6 rounded-xl border border-accent-style bg-interactive-block hover:shadow-neon transition duration-300 transform hover:scale-105">
+                    class="p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform float-element" style="animation-delay: 2s;">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl">☕</span>
                     </div>
@@ -288,7 +347,7 @@
 
                 <div class="text-center mt-12">
                     <a href="projets.html"
-                        class="inline-block px-8 py-4 bg-accent-style text-gray-900 rounded-full font-bold hover:bg-white transition duration-300 transform hover:scale-105 shadow-neon"
+                        class="inline-block btn-girly text-lg"
                         data-lang="btn_all_projects">Voir tous les projets 🚀</a>
                 </div>
             </div>
@@ -314,7 +373,7 @@
                         class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-accent-style focus:ring-1 focus:ring-accent-style transition duration-500"
                         required data-lang-placeholder="form_msg"></textarea>
                     <button type="submit"
-                        class="w-full p-3 bg-accent-style text-gray-900 rounded-lg font-bold hover:bg-white transition duration-300 transform hover:scale-[1.02]"
+                        class="w-full btn-girly"
                         data-lang="btn_send">Envoyer la Transmission</button>
                 </form>
             </div>
@@ -464,7 +523,7 @@
 
             const createSkillCard = (skill) => {
                 const card = document.createElement('div');
-                card.className = `flex-shrink-0 w-48 h-32 m-4 p-4 rounded-lg border border-accent-style bg-interactive-block text-center flex flex-col justify-center items-center transform transition duration-500 hover:scale-105 shadow-md`;
+                card.className = `flex-shrink-0 w-48 h-32 m-4 p-4 rounded-lg border border-accent-style bg-interactive-block text-center flex flex-col justify-center items-center transform transition duration-500 hover-wobble shadow-md`;
                 card.innerHTML = `
                     <span class="text-3xl">${skill.icon}</span>
                     <p class="text-white font-bold mt-2">${skill.name}</p>
@@ -511,13 +570,17 @@
                     projectCard.className = 'p-6 rounded-xl border border-accent-style hover:border-heavy-accent transition duration-300 transform hover:shadow-neon bg-interactive-block flex flex-col';
                     projectCard.innerHTML = `
                         <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700">
-                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                            <div class="flex items-center justify-center w-full h-full bg-interactive-block transition duration-500 hover:scale-110 text-accent-style">
+                                <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h3 class="text-2xl font-bold text-accent-style mb-2 transition duration-500">${p.title}</h3>
                         <p class="text-sm text-gray-400 mb-4 flex-grow line-clamp-3">${p.desc}</p>
                         <div class="mt-auto">
                             <div class="mb-4"><span class="text-xs font-bold text-accent-style">${translations[lang].tech_label}</span> <span class="text-xs text-gray-300">${p.tech}</span></div>
-                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 border border-accent-style text-accent-style rounded hover:bg-accent-style hover:text-gray-900 transition duration-300">${translations[lang].card_repo}</a>
+                            <a href="${p.link}" target="_blank" class="block w-full text-center py-2 btn-girly w-full">${translations[lang].card_repo}</a>
                         </div>
                     `;
                     projectsContainer.appendChild(projectCard);

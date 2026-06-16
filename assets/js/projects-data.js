@@ -1,4 +1,4 @@
-﻿
+
 const rawProjectsData = [
   {
     "id": 1061730005,
@@ -169,6 +169,23 @@ const rawProjectsData = [
     "html_url": "https://github.com/nmissi-nadia/Plateforme-e-commerce",
     "description": "YouMarket : plateforme e-commerce moderne utilisant HTML, CSS, Tailwind et JavaScript.",
     "language": "JavaScript",
+  },
+  {
+    "id": null,
+    "name": "Brief1_Nmissi_Nadia",
+    "full_name": "nmissi-nadia/Brief1_Nmissi_Nadia",
+    "html_url": "https://github.com/nmissi-nadia/Brief1_Nmissi_Nadia",
+    "description": "Amélioration, organisation et réutilisation d'un template One-page",
+    "language": "CSS",
+    "image_url": ""
+  },
+  {
+    "id": null,
+    "name": "ChocoTrack",
+    "full_name": "nmissi-nadia/ChocoTrack",
+    "html_url": "https://github.com/nmissi-nadia/ChocoTrack",
+    "description": "Une application web pour gérer une pâtisserie locale (ventes, stock, commandes, clients).",
+    "language": "JavaScript",
     "image_url": ""
   }
 ];
@@ -213,6 +230,11 @@ const translations = {
     exp_desc: "Participation au développement de l'application <span class=\"text-accent-style\">LiqaaSpace</span>, une solution de réservation et gestion des salles de réunion.",
     exp_item1: "Contribution aux différentes étapes du cycle de développement : analyse fonctionnelle, conception UML, développement, tests et déploiement.",
     exp_item2: "Développement du frontend en <span class=\"text-white\">React.js</span> et du backend en <span class=\"text-white\">Laravel</span> (Eloquent ORM, API REST) avec une base de données MySQL.",
+    nav_edu: "Formations",
+    edu_title: "ÉTUDES ET FORMATIONS 🎓",
+    edu_1_title: "Développement Full Stack Web",
+    edu_2_title: "Licence Sciences Mathématiques et Informatiques",
+    edu_3_title: "Baccalauréat Sciences Mathématiques B BIOF",
     projects_title: "GALAXIES DE PROJETS 🪐",
     btn_all_projects: "Voir tous les projets 🚀",
     contact_title: "CONTACT : ÉTABLISSONS LA CONNEXION 📡",
@@ -257,6 +279,11 @@ const translations = {
     exp_desc: "Participation in the development of <span class=\"text-accent-style\">LiqaaSpace</span>, a meeting room reservation and management solution.",
     exp_item1: "Contribution to various stages of the development cycle: functional analysis, UML design, development, testing, and deployment.",
     exp_item2: "Frontend development in <span class=\"text-white\">React.js</span> and backend in <span class=\"text-white\">Laravel</span> (Eloquent ORM, REST API) with a MySQL database.",
+    nav_edu: "Education",
+    edu_title: "EDUCATION & DEGREES 🎓",
+    edu_1_title: "Full Stack Web Development",
+    edu_2_title: "Bachelor in Mathematical and Computer Sciences",
+    edu_3_title: "High School Diploma in Mathematical Sciences B",
     projects_title: "PROJECT GALAXIES 🪐",
     btn_all_projects: "See all projects 🚀",
     contact_title: "CONTACT: ESTABLISHING CONNECTION 📡",
