@@ -113,7 +113,7 @@ const rawProjectsData = [
     "name": "GrandTaxiGo",
     "full_name": "nmissi-nadia/GrandTaxiGo",
     "html_url": "https://github.com/nmissi-nadia/GrandTaxiGo",
-    "description": "Plateforme de Réservation de Grands Taxis.",
+    "description": "Application complète de réservation de Grands Taxis pour faciliter les trajets interurbains. Gestion des courses, des chauffeurs et des clients via un tableau de bord intuitif.",
     "language": "PHP",
     "image_url": ""
   },
@@ -122,7 +122,7 @@ const rawProjectsData = [
     "name": "GrandTaxiGo-V2",
     "full_name": "nmissi-nadia/GrandTaxiGo-V2",
     "html_url": "https://github.com/nmissi-nadia/GrandTaxiGo-V2",
-    "description": "Plateforme intuitive permettant aux passagers de réserver facilement des grands taxis et aux chauffeurs de gérer leurs trajets.",
+    "description": "Version améliorée et optimisée de la plateforme GrandTaxiGo. Architecture robuste sous Laravel, avec une interface moderne permettant aux passagers de réserver facilement et aux chauffeurs de gérer leurs trajets en temps réel.",
     "language": "Laravel",
     "image_url": ""
   },
@@ -131,7 +131,7 @@ const rawProjectsData = [
     "name": "LiqaaSpace",
     "full_name": "nmissi-nadia/LiqaaSpace",
     "html_url": "https://github.com/nmissi-nadia/LiqaaSpace",
-    "description": "Plateforme de réservation de salles de réunion.",
+    "description": "Solution complète de réservation et de gestion de salles de réunion. Intégration de calendriers, gestion des conflits d'horaires et tableau de bord administrateur.",
     "language": "JavaScript",
     "image_url": ""
   },
@@ -140,7 +140,7 @@ const rawProjectsData = [
     "name": "Lost_Foundd",
     "full_name": "nmissi-nadia/Lost_Foundd",
     "html_url": "https://github.com/nmissi-nadia/Lost_Foundd",
-    "description": "Plateforme Lost&Found pour publier et retrouver des objets perdus grâce à une interface simple et sécurisée.",
+    "description": "Plateforme solidaire web permettant de publier des annonces et de retrouver des objets perdus. Interface simple, recherche filtrée et mise en relation sécurisée entre utilisateurs.",
     "language": "Blade",
     "image_url": ""
   },
@@ -149,7 +149,7 @@ const rawProjectsData = [
     "name": "Museekly",
     "full_name": "nmissi-nadia/Museekly",
     "html_url": "https://github.com/nmissi-nadia/Museekly",
-    "description": "Plateforme dédiée à la recherche de paroles de chansons.",
+    "description": "Application dynamique dédiée à la recherche de paroles de chansons en temps réel, utilisant des API musicales externes pour offrir une expérience utilisateur fluide.",
     "language": "JavaScript",
     "image_url": ""
   },
@@ -158,7 +158,7 @@ const rawProjectsData = [
     "name": "PFE_Optimisation_Stocks",
     "full_name": "nmissi-nadia/PFE_Optimisation_de_la_gestion_des_stocks_avec_la_pr-diction_de_la_demande",
     "html_url": "https://github.com/nmissi-nadia/PFE_Optimisation_de_la_gestion_des_stocks_avec_la_pr-diction_de_la-demande",
-    "description": "Optimisation de la gestion des stocks via la prévision de la demande. Utilisation de Python et Pandas.",
+    "description": "Projet de Fin d'Études axé sur l'intelligence artificielle. Optimisation algorithmique de la gestion des stocks et prédiction de la demande en utilisant Python, Pandas et le Machine Learning.",
     "language": "Jupyter Notebook",
     "image_url": ""
   },
@@ -167,7 +167,7 @@ const rawProjectsData = [
     "name": "Plateforme-e-commerce",
     "full_name": "nmissi-nadia/Plateforme-e-commerce",
     "html_url": "https://github.com/nmissi-nadia/Plateforme-e-commerce",
-    "description": "YouMarket : plateforme e-commerce moderne utilisant HTML, CSS, Tailwind et JavaScript.",
+    "description": "YouMarket : Boutique en ligne moderne et performante, dotée d'un panier dynamique, d'un catalogue de produits réactif et d'un design élégant (HTML, CSS, Tailwind, JS).",
     "language": "JavaScript",
   },
   {
@@ -175,7 +175,7 @@ const rawProjectsData = [
     "name": "Brief1_Nmissi_Nadia",
     "full_name": "nmissi-nadia/Brief1_Nmissi_Nadia",
     "html_url": "https://github.com/nmissi-nadia/Brief1_Nmissi_Nadia",
-    "description": "Amélioration, organisation et réutilisation d'un template One-page",
+    "description": "Refonte, structuration et intégration web d'un template One-Page moderne. Optimisation de l'UI/UX et du code CSS pour une meilleure maintenabilité.",
     "language": "CSS",
     "image_url": ""
   },
@@ -184,7 +184,7 @@ const rawProjectsData = [
     "name": "ChocoTrack",
     "full_name": "nmissi-nadia/ChocoTrack",
     "html_url": "https://github.com/nmissi-nadia/ChocoTrack",
-    "description": "Une application web pour gérer une pâtisserie locale (ventes, stock, commandes, clients).",
+    "description": "Outil de gestion complet pour une pâtisserie locale. Permet le suivi précis des ventes, l'inventaire des ingrédients en temps réel et la gestion optimale des commandes clients.",
     "language": "JavaScript",
     "image_url": ""
   },
@@ -193,7 +193,7 @@ const rawProjectsData = [
     "name": "SkillMap",
     "full_name": "nmissi-nadia/SkillMap",
     "html_url": "https://github.com/nmissi-nadia/SkillMap",
-    "description": "Plateforme de cartographie, communication et suivi des compétences internes",
+    "description": "Plateforme interactive de cartographie et de suivi des compétences internes. Favorise la communication entre les équipes et l'évolution des profils professionnels (développé en TypeScript).",
     "language": "TypeScript",
     "image_url": ""
   },
@@ -202,7 +202,7 @@ const rawProjectsData = [
     "name": "MatchCraft",
     "full_name": "nmissi-nadia/MatchCraft",
     "html_url": "https://github.com/nmissi-nadia/MatchCraft",
-    "description": "Projet d'application MatchCraft développé en Java.",
+    "description": "Application back-end structurée développée en Java. Mise en place de modèles de conception (Design Patterns) et d'une architecture orientée objet solide.",
     "language": "Java",
     "image_url": ""
   }
