@@ -31,5 +31,3 @@ Intéressé(e) par mon profil pour une mission de développement ou une collabor
 - **LinkedIn** : [Nadia NMISSI](https://www.linkedin.com/in/nmissi-nadia)
 - **GitHub** : [@nmissi-nadia](https://github.com/nmissi-nadia)
 
----
-*Conçu avec passion et propulsé par du code Full Stack.*
