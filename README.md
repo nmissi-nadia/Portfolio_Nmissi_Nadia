@@ -28,6 +28,6 @@ Ce portfolio interactif est une vitrine de mes compétences, projets et expérie
 ## Contact
 
 Intéressé(e) par mon profil pour une mission de développement ou une collaboration ? 
-- **LinkedIn** : [Nadia NMISSI](https://www.linkedin.com/in/nmissi-nadia)
+- **LinkedIn** : [Nadia NMISSI](https://www.linkedin.com/in/nadia-nmissi/)
 - **GitHub** : [@nmissi-nadia](https://github.com/nmissi-nadia)
 
