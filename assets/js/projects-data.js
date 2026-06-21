@@ -212,9 +212,12 @@ const rawProjectsData = [
 function getProjects() {
   return rawProjectsData.map(p => ({
     title: p.name,
+    full_name: p.full_name,
     desc: p.description || "Description non disponible pour ce projet.",
     tech: p.language || "Non spécifié",
     link: p.html_url,
+    stars: p.stars || 0,
+    forks: p.forks || 0,
     // Si image_url est vide, on utilise un placeholder, sinon on utilise l'URL
     image: p.image_url && p.image_url.trim() !== ""
       ? p.image_url
@@ -328,3 +331,29 @@ function getTranslation(key, lang = 'fr') {
   return translations[lang][key] || key;
 }
 
+// --- FETCH GITHUB STATS DYNAMICALLY ---
+window.githubDataFetched = false;
+
+async function fetchGitHubStats() {
+    try {
+        const response = await fetch('https://api.github.com/users/nmissi-nadia/repos');
+        if (!response.ok) throw new Error("API Limit or Error");
+        const repos = await response.json();
+        
+        repos.forEach(repo => {
+            const project = rawProjectsData.find(p => p.full_name === repo.full_name);
+            if (project) {
+                project.stars = repo.stargazers_count;
+                project.forks = repo.forks_count;
+            }
+        });
+        window.githubDataFetched = true;
+        // Dispatch custom event to tell the UI to re-render
+        document.dispatchEvent(new Event('githubStatsReady'));
+    } catch (e) {
+        console.warn("Could not fetch GitHub stats, using defaults.", e);
+    }
+}
+
+// Lancer le fetch en arrière-plan
+fetchGitHubStats();

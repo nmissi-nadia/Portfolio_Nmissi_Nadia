@@ -1,22 +1,22 @@
 /* --- DÉFINITION DES COULEURS ET THÈMES --- */
 
-/* Girly Palette - Couleurs unies, sans dégradés */
+/* Girly Palette - Nuit (Thème par défaut) */
 :root {
+    --color-bg: #1A0B2E; /* Very Dark Purple */
+    --color-text: #FDE8F1; /* Light Pink/White */
+    --color-accent: #FF1493; /* Deep Pink */
+    --color-border: #FF69B4; /* Hot Pink */
+    --interactive-bg: #2D144A; /* Dark Purple Container */
+    --star-color: transparent; /* Masquer les étoiles */
+}
+
+/* Girly Palette - Jour */
+.day-mode {
     --color-bg: #FFF0F5; /* Lavender Blush */
     --color-text: #4A0E4E; /* Dark Purple */
     --color-accent: #FF1493; /* Deep Pink */
     --color-border: #FF69B4; /* Hot Pink */
     --interactive-bg: #FFFFFF; /* Pure White */
-    --star-color: transparent; /* Masquer les étoiles */
-}
-
-/* Thème "Jour" (Optionnel - variations de rose) */
-.day-mode {
-    --color-bg: #FFE4E1; /* Misty Rose */
-    --color-text: #2D0A31;
-    --color-accent: #C71585; /* Medium Violet Red */
-    --color-border: #DB7093; /* Pale Violet Red */
-    --interactive-bg: #FFF5EE; /* Sea Shell */
     --star-color: transparent;
 }
 

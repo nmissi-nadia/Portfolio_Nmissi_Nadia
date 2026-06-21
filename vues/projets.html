@@ -1,10 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tous les Projets | NMISSI NADIA</title>
+    <title>Archives Projets | Nadia Nmissi</title>
+    <!-- Open Graph SEO Meta Tags -->
+    <meta property="og:title" content="Archives Projets | NMISSI NADIA">
+    <meta property="og:description" content="Découvrez tous mes projets web, expérimentations et applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nmissi-nadia.github.io/vues/projets.html">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/100000000">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,6 +50,16 @@
                 ARCHIVES DES PROJETS <i class='fa-solid fa-folder-open text-accent-style'></i>
             </h1>
             <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto" data-lang="archive_desc">Exploration complète de mes développements, applications et expérimentations.</p>
+            
+            <!-- Filtres de Projets -->
+            <div id="project-filters" class="flex flex-wrap justify-center gap-4 mb-10">
+                <button class="filter-btn active px-4 py-2 rounded-full border border-accent-style bg-accent-style text-white font-bold transition duration-300" data-filter="all">Tous</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-accent-style text-accent-style hover:bg-accent-style hover:text-white font-bold transition duration-300" data-filter="JavaScript">JavaScript</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-accent-style text-accent-style hover:bg-accent-style hover:text-white font-bold transition duration-300" data-filter="TypeScript">TypeScript</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-accent-style text-accent-style hover:bg-accent-style hover:text-white font-bold transition duration-300" data-filter="Java">Java</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-accent-style text-accent-style hover:bg-accent-style hover:text-white font-bold transition duration-300" data-filter="PHP">PHP</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-accent-style text-accent-style hover:bg-accent-style hover:text-white font-bold transition duration-300" data-filter="Laravel">Laravel</button>
+            </div>
             
             <!-- Container Grille -->
             <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -152,30 +167,42 @@
                 starContainer.appendChild(star);
             }
 
-            // --- LOGIQUE DE PAGINATION ---
-            const allProjects = (typeof getProjects === 'function') ? getProjects() : [];
+            // --- LOGIQUE DE PAGINATION ET FILTRES ---
+            let allProjects = (typeof getProjects === 'function') ? getProjects() : [];
+            let filteredProjects = [...allProjects];
             const container = document.getElementById('all-projects-container');
             const prevBtn = document.getElementById('prev-page-btn');
             const nextBtn = document.getElementById('next-page-btn');
             const pageIndicator = document.getElementById('page-indicator');
+            const filterBtns = document.querySelectorAll('.filter-btn');
 
             const itemsPerPage = 6;
             let currentPage = 1;
-            const totalPages = Math.ceil(allProjects.length / itemsPerPage);
 
             function renderPage(page) {
                 if (!container) return;
                 if (typeof translations === 'undefined') return;
 
+                const totalPages = Math.ceil(filteredProjects.length / itemsPerPage) || 1;
+                
+                if(page > totalPages) {
+                    page = 1;
+                    currentPage = 1;
+                }
+
                 container.innerHTML = '';
                 const start = (page - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
-                const projectsToShow = allProjects.slice(start, end);
+                const projectsToShow = filteredProjects.slice(start, end);
 
                 projectsToShow.forEach(p => {
                     const card = document.createElement('div');
                     card.className = 'flex flex-col p-6 rounded-xl border border-accent-style bg-interactive-block transition duration-300 transform hover:-translate-y-2';
                     
+                    const statsHtml = (p.stars !== undefined && p.forks !== undefined && window.githubDataFetched) 
+                        ? `<span class="text-xs bg-gray-800 text-yellow-400 px-2 py-1 rounded ml-2"><i class="fa-solid fa-star"></i> ${p.stars} <i class="fa-solid fa-code-branch ml-1"></i> ${p.forks}</span>` 
+                        : '';
+
                     card.innerHTML = `
                         <div class="h-48 w-full mb-4 overflow-hidden rounded-lg border border-gray-700 bg-gray-900 relative group">
                             <div class="flex items-center justify-center w-full h-full bg-interactive-block transition duration-500 group-hover:scale-110 text-accent-style">
@@ -191,7 +218,10 @@
                         <p class="text-sm text-gray-400 mb-4 flex-grow">${p.desc}</p>
                         <div class="mt-auto pt-4 border-t border-gray-700">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs bg-gray-700 text-white px-2 py-1 rounded">${p.tech}</span>
+                                <div class="flex items-center">
+                                    <span class="text-xs bg-gray-700 text-white px-2 py-1 rounded">${p.tech}</span>
+                                    ${statsHtml}
+                                </div>
                             </div>
                             <a href="${p.link}" target="_blank" class="block w-full text-center py-2 btn-girly w-full">${translations[currentLang].card_repo}</a>
                         </div>
@@ -199,14 +229,35 @@
                     container.appendChild(card);
                 });
 
-                // Mise à jour des boutons
                 pageIndicator.textContent = `Page ${page} / ${totalPages}`;
                 prevBtn.disabled = page === 1;
-                nextBtn.disabled = page === totalPages;
-                
-                // Scroll to top smooth
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                nextBtn.disabled = page === totalPages || totalPages === 0;
             }
+
+            function applyFilter(filterValue) {
+                if(filterValue === 'all') {
+                    filteredProjects = [...allProjects];
+                } else {
+                    filteredProjects = allProjects.filter(p => {
+                        return p.tech && p.tech.toLowerCase().includes(filterValue.toLowerCase());
+                    });
+                }
+                currentPage = 1;
+                renderPage(currentPage);
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-accent-style', 'text-white');
+                        b.classList.add('text-accent-style');
+                    });
+                    e.target.classList.add('active', 'bg-accent-style', 'text-white');
+                    e.target.classList.remove('text-accent-style');
+                    
+                    applyFilter(e.target.dataset.filter);
+                });
+            });
 
             prevBtn.addEventListener('click', () => {
                 if (currentPage > 1) {
@@ -216,9 +267,18 @@
             });
 
             nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
                 if (currentPage < totalPages) {
                     currentPage++;
                     renderPage(currentPage);
+                }
+            });
+
+            document.addEventListener('githubStatsReady', () => {
+                allProjects = getProjects();
+                const activeBtn = document.querySelector('.filter-btn.active');
+                if(activeBtn) {
+                    applyFilter(activeBtn.dataset.filter);
                 }
             });
 

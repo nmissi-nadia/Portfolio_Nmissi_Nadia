@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NMISSI NADIA | Dev Full Stack - Voyage Cosmique</title>
+    <!-- Open Graph SEO Meta Tags -->
+    <meta property="og:title" content="Portfolio | NMISSI NADIA - Développeuse Full Stack">
+    <meta property="og:description" content="Découvrez mon univers de développement : projets web, applications, compétences en Full Stack (Java, JS, Laravel, React).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nmissi-nadia.github.io/">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/100000000"> <!-- Generic GitHub Avatar placeholder -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -126,7 +132,9 @@
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                             </svg> <span data-lang="btn_cv">Télécharger CV</span></a>
                         <a href="https://github.com/nmissi-nadia" target="_blank" class="btn-girly"
-                            style="background-color: transparent; color: var(--color-accent) !important;">GitHub</a>
+                            style="background-color: transparent; color: var(--color-accent) !important;" aria-label="Mon profil GitHub"><i class="fa-brands fa-github text-xl"></i></a>
+                        <a href="https://www.linkedin.com/in/nmissi-nadia" target="_blank" class="btn-girly"
+                            style="background-color: transparent; color: var(--color-accent) !important;" aria-label="Mon profil LinkedIn"><i class="fa-brands fa-linkedin text-xl"></i></a>
                     </div>
                 </div>
 
@@ -365,12 +373,19 @@
             </div>
         </section>
 
-        <section id="contact" class="pt-20 pb-20 text-center reveal">
-            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-accent-style transition duration-500"
-                data-lang="contact_title">CONTACT : ÉTABLISSONS LA CONNEXION 📡</h2>
-            <p class="text-xl text-gray-400 mb-10 transition duration-500" data-lang="contact_desc">
+        <section id="contact" class="py-20 reveal max-w-4xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-12" data-lang="contact_title">CONTACT <i class='fa-solid fa-paper-plane text-accent-style'></i></h2>
+            <p class="text-center text-gray-400 max-w-2xl mx-auto mb-8" data-lang="contact_desc">
                 Laissez-moi un message pour démarrer une nouvelle mission de développement.
             </p>
+
+            <!-- Graphe de contributions GitHub -->
+            <div class="mb-12 p-4 bg-interactive-block rounded-xl border border-accent-style text-center">
+                <h3 class="text-xl font-bold mb-4 text-white" data-lang="github_activity">Mon Activité GitHub</h3>
+                <div class="overflow-x-auto flex justify-center">
+                    <img src="https://ghchart.rshah.org/FF1493/nmissi-nadia" alt="Graphe des contributions GitHub de Nadia Nmissi" class="w-full max-w-3xl">
+                </div>
+            </div>
 
             <div class="max-w-md mx-auto space-y-4">
                 <form action="https://formspree.io/f/xrbnavqb" method="POST"
